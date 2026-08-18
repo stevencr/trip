@@ -1,67 +1,385 @@
+```html
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#171512">
+
+<!-- Open Graph Tags -->
+<meta property="og:title" content="Karen & Steven's Weekend — Edinburgh" />
+<meta property="og:description" content="A romantic weekend itinerary for Karen & Steven in Edinburgh: castles, old streets, whisky, Fringe, and folk music. 27–30 August 2026." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://your-trip-website.com/karen-steven-edinburgh" />
+<meta property="og:image" content="https://images.unsplash.com/photo-1580692465305-454dd7b65437?w=1200&h=630&fit=crop" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Edinburgh Castle and the city skyline at sunset" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Karen & Steven's Weekend — Edinburgh" />
+<meta name="twitter:description" content="A romantic weekend itinerary for Karen & Steven in Edinburgh: castles, old streets, whisky, Fringe, and folk music. 27–30 August 2026." />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1580692465305-454dd7b65437?w=1200&h=630&fit=crop" />
+
 <title>Karen &amp; Steven's Weekend — Edinburgh</title>
 <style>
+/* ----- Google Font (system fallback for Apple/Android) ----- */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+
 :root{
-  --bg:#f5f1e9;--card:#fffdf9;--ink:#211f1b;--muted:#756f66;
-  --accent:#a44f3f;--accent2:#d8a85d;--line:#e7dfd2;--dark:#211d18;
+  --bg:#faf3ed;
+  --card:#ffffff;
+  --ink:#2a2420;
+  --muted:#7a6b60;
+  --accent:#d45a6a;
+  --accent2:#e8a87c;
+  --accent3:#6a9c8a;
+  --line:#e8ddd2;
+  --dark:#2a1f1b;
+  --gradient-start:#3d1f2b;
+  --gradient-mid:#7a4a5a;
+  --gradient-end:#b57a7a;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-.hero{background:linear-gradient(145deg,#171512 0%,#302820 55%,#5b4434 100%);color:white;padding:44px 20px 30px;position:relative;overflow:hidden}
-.hero:after{content:"";position:absolute;width:260px;height:260px;border:1px solid rgba(255,255,255,.12);border-radius:50%;right:-100px;top:-100px}
-.kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#d8a85d;font-weight:700}
-h1{font-family:Georgia,serif;font-weight:500;font-size:42px;line-height:1.02;margin:10px 0}
-.hero p{color:#d8d1c8;margin:8px 0 0;font-size:15px}
-.hero .pill{display:inline-block;margin-top:22px;padding:8px 12px;border:1px solid rgba(255,255,255,.18);border-radius:999px;font-size:12px;color:#eee8df}
-.tabs-wrap{position:sticky;top:0;z-index:20;background:rgba(245,241,233,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.tabs{display:flex;overflow-x:auto;gap:7px;padding:10px 14px;scrollbar-width:none}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Quicksand',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-weight:400;
+  line-height:1.6;
+}
+.hero{
+  background:linear-gradient(135deg,var(--gradient-start) 0%,var(--gradient-mid) 55%,var(--gradient-end) 100%);
+  color:white;
+  padding:44px 20px 30px;
+  position:relative;
+  overflow:hidden;
+}
+.hero:after{
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:50%;
+  right:-100px;
+  top:-100px;
+  pointer-events:none;
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  width:200px;
+  height:200px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:50%;
+  left:-60px;
+  bottom:-80px;
+  pointer-events:none;
+}
+.kicker{
+  font-size:12px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:#f5d6b3;
+  font-weight:700;
+  position:relative;
+  z-index:1;
+}
+h1{
+  font-family:'Playfair Display',Georgia,serif;
+  font-weight:600;
+  font-size:38px;
+  line-height:1.05;
+  margin:8px 0 4px;
+  position:relative;
+  z-index:1;
+}
+.hero p{
+  color:#f5e8dc;
+  margin:6px 0 0;
+  font-size:15px;
+  font-weight:400;
+  position:relative;
+  z-index:1;
+}
+.hero .pill{
+  display:inline-block;
+  margin-top:18px;
+  padding:8px 16px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;
+  font-size:12px;
+  color:#f5ede5;
+  font-weight:600;
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(4px);
+  position:relative;
+  z-index:1;
+}
+.tabs-wrap{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(250,243,237,.92);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+}
+.tabs{
+  display:flex;
+  overflow-x:auto;
+  gap:6px;
+  padding:10px 14px;
+  scrollbar-width:none;
+}
 .tabs::-webkit-scrollbar{display:none}
-.tab{flex:0 0 auto;border:0;background:transparent;padding:9px 13px;border-radius:999px;color:var(--muted);font-weight:700;font-size:13px}
-.tab.active{background:var(--dark);color:white}
-main{max-width:820px;margin:0 auto;padding:24px 16px 60px}
-.day{display:none}.day.active{display:block}
-.day-head{margin-bottom:22px}
-.day-head .date{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);font-weight:800}
-.day-head h2{font-family:Georgia,serif;font-size:31px;line-height:1.1;margin:7px 0 4px;font-weight:500}
-.day-head p{margin:0;color:var(--muted);font-size:14px}
-.timeline{position:relative}
-.timeline:before{content:"";position:absolute;left:9px;top:10px;bottom:10px;width:1px;background:var(--line)}
-.item{position:relative;padding:0 0 18px 32px}
-.dot{position:absolute;left:4px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--bg)}
-.time{font-size:12px;color:var(--accent);font-weight:800;letter-spacing:.03em;margin-bottom:5px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:17px;box-shadow:0 5px 18px rgba(53,42,28,.05)}
-.card h3{font-family:Georgia,serif;font-size:21px;font-weight:500;margin:0 0 7px}
-.card p{margin:0;color:#5d574f;font-size:14px;line-height:1.55}
-.tag{display:inline-block;margin-top:11px;padding:5px 8px;border-radius:7px;background:#f1e8dc;color:#76533e;font-size:11px;font-weight:800}
-.special{border-left:4px solid var(--accent2)}
-.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-a.btn{display:inline-block;text-decoration:none;color:var(--dark);background:#eee7dc;border-radius:9px;padding:7px 10px;font-size:12px;font-weight:800}
-.footer{margin-top:30px;padding:18px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;text-align:center}
+.tab{
+  flex:0 0 auto;
+  border:0;
+  background:transparent;
+  padding:10px 18px;
+  border-radius:999px;
+  color:var(--muted);
+  font-weight:700;
+  font-size:13px;
+  cursor:pointer;
+  transition:all .2s;
+  font-family:'Quicksand',sans-serif;
+}
+.tab.active{
+  background:var(--accent);
+  color:white;
+  box-shadow:0 4px 14px rgba(212,90,106,.3);
+}
+.tab:hover:not(.active){
+  background:rgba(212,90,106,.12);
+}
+main{
+  max-width:820px;
+  margin:0 auto;
+  padding:24px 16px 60px;
+}
+.day{display:none}
+.day.active{display:block}
+.day-head{margin-bottom:24px}
+.day-head .date{
+  font-size:12px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:700;
+}
+.day-head h2{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:30px;
+  line-height:1.1;
+  margin:6px 0 4px;
+  font-weight:600;
+  color:var(--dark);
+}
+.day-head p{
+  margin:0;
+  color:var(--muted);
+  font-size:15px;
+}
+.timeline{position:relative;padding-left:0}
+.timeline:before{
+  content:"";
+  position:absolute;
+  left:9px;
+  top:10px;
+  bottom:10px;
+  width:2px;
+  background:linear-gradient(to bottom,var(--accent),var(--accent3),var(--accent2));
+  border-radius:4px;
+}
+.item{
+  position:relative;
+  padding:0 0 20px 34px;
+}
+.dot{
+  position:absolute;
+  left:2px;
+  top:6px;
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 0 5px var(--bg),0 2px 8px rgba(212,90,106,.25);
+  border:2px solid white;
+}
+.time{
+  font-size:12px;
+  color:var(--accent);
+  font-weight:700;
+  letter-spacing:.04em;
+  margin-bottom:4px;
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:18px;
+  box-shadow:0 6px 24px rgba(53,42,28,.06);
+  transition:transform .15s ease,box-shadow .15s ease;
+}
+.card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 32px rgba(53,42,28,.10);
+}
+.card h3{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:20px;
+  font-weight:600;
+  margin:0 0 6px;
+  color:var(--dark);
+}
+.card p{
+  margin:0;
+  color:#5d554d;
+  font-size:14px;
+  line-height:1.6;
+}
+.tag{
+  display:inline-block;
+  margin-top:12px;
+  padding:5px 12px;
+  border-radius:8px;
+  background:linear-gradient(135deg,#f5e8dc,#f0ddd0);
+  color:#7a5a4a;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.special{
+  border-left:5px solid var(--accent2);
+  background:linear-gradient(to right,rgba(232,168,124,.05),transparent);
+}
+.links{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:12px;
+}
+a.btn{
+  display:inline-block;
+  text-decoration:none;
+  color:var(--dark);
+  background:#eee7dc;
+  border-radius:10px;
+  padding:7px 14px;
+  font-size:12px;
+  font-weight:700;
+  transition:all .15s;
+  font-family:'Quicksand',sans-serif;
+}
+a.btn:hover{
+  background:var(--accent);
+  color:white;
+  transform:scale(.97);
+}
+.footer{
+  margin-top:32px;
+  padding:20px;
+  border-top:2px solid var(--line);
+  color:var(--muted);
+  font-size:12px;
+  text-align:center;
+  font-weight:600;
+  letter-spacing:.04em;
+}
+.footer span{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  font-weight:700;
+}
 @media(min-width:700px){
- .hero{padding:64px calc((100% - 820px)/2) 38px}
- h1{font-size:54px}
- main{padding-top:34px}
- .tabs{justify-content:center}
+  .hero{padding:64px calc((100% - 820px)/2) 40px}
+  h1{font-size:52px}
+  main{padding-top:34px}
+  .tabs{justify-content:center}
+  .card{padding:22px}
 }
 
-.audio-row{display:flex;align-items:center;gap:10px;margin-top:13px}
-.audio-btn{width:40px;height:40px;border:0;border-radius:50%;background:var(--dark);color:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,.12);font-size:16px}
-.audio-btn:active{transform:scale(.96)}
+/* ----- Audio styles ----- */
+.audio-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-top:14px;
+}
+.audio-btn{
+  width:42px;
+  height:42px;
+  border:0;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),#b84a5a);
+  color:#fff;
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  box-shadow:0 4px 14px rgba(212,90,106,.3);
+  font-size:16px;
+  transition:all .2s;
+  flex-shrink:0;
+}
+.audio-btn:active{
+  transform:scale(.92);
+}
+.audio-btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 6px 20px rgba(212,90,106,.4);
+}
 .audio-btn .stop{display:none}
 .audio-btn.playing .play{display:none}
 .audio-btn.playing .stop{display:block}
-.audio-label{font-size:11px;font-weight:800;color:var(--muted);letter-spacing:.04em}
-.day-audio{background:#211d18;color:white;border-radius:16px;padding:15px 16px;margin:0 0 20px;display:flex;align-items:center;gap:13px}
-.day-audio .audio-btn{background:#a44f3f;flex:0 0 auto}
-.day-audio-text strong{display:block;font-family:Georgia,serif;font-size:17px;font-weight:500}
-.day-audio-text span{display:block;color:#c9c1b7;font-size:12px;margin-top:2px}
-@media(min-width:700px){.audio-btn{width:42px;height:42px}}
+.audio-btn.playing{
+  background:linear-gradient(135deg,#6a9c8a,#4a8a7a);
+  box-shadow:0 4px 14px rgba(106,156,138,.3);
+}
+.audio-label{
+  font-size:10px;
+  font-weight:700;
+  color:var(--muted);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.day-audio{
+  background:linear-gradient(135deg,#2a1f1b,#4a3a32);
+  color:white;
+  border-radius:20px;
+  padding:16px 18px;
+  margin:0 0 22px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  box-shadow:0 6px 20px rgba(0,0,0,.08);
+}
+.day-audio .audio-btn{
+  background:linear-gradient(135deg,var(--accent2),var(--accent));
+  flex:0 0 auto;
+  box-shadow:0 4px 14px rgba(232,168,124,.3);
+}
+.day-audio-text strong{
+  display:block;
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:17px;
+  font-weight:600;
+}
+.day-audio-text span{
+  display:block;
+  color:#d5cbc2;
+  font-size:12px;
+  margin-top:2px;
+}
+@media(min-width:700px){
+  .audio-btn{width:44px;height:44px}
+}
 </style>
 </head>
 <body>
@@ -69,7 +387,7 @@ a.btn{display:inline-block;text-decoration:none;color:var(--dark);background:#ee
   <div class="kicker">27 — 30 August 2026</div>
   <h1>Karen &amp; Steven's<br>Weekend</h1>
   <p>Castles · old streets · whisky · Fringe · folk music</p>
-  <span class="pill">No Tattoo — just the things we actually want to do</span>
+  <span class="pill">Just the things we actually want to do</span>
 </header>
 
 <nav class="tabs-wrap" aria-label="Trip days">
@@ -85,26 +403,26 @@ a.btn{display:inline-block;text-decoration:none;color:var(--dark);background:#ee
 <section class="day active" id="thu">
   <div class="day-head"><div class="date">Thursday · 27 August</div><h2>Arrival & Old Town</h2><p>Ease into the weekend and get straight into Edinburgh's atmosphere.</p></div>
   <div class="timeline">
-    <article class="item"><span class="dot"></span><div class="time">AFTERNOON</div><div class="card"><h3>Check in & explore Old Town</h3><p>Castlehill → Royal Mile → St Giles' → Victoria Street → Grassmarket. Dip into the closes and wander through Greyfriars Kirkyard and Candlemaker Row.</p><span class="tag">WALK & EXPLORE</span></div></article>
-    <article class="item"><span class="dot"></span><div class="time">17:00</div><div class="card"><h3>Drinks in the Grassmarket</h3><p>Stop for a drink, then make your way back towards the Royal Mile.</p></div></article>
+    <article class="item"><span class="dot"></span><div class="time">AFTERNOON</div><div class="card" data-speech="Check in and explore the Old Town. Walk from Castlehill along the Royal Mile, visit St Giles' Cathedral, Victoria Street, and the Grassmarket. Dip into the historic closes."><h3>Check in & explore Old Town</h3><p>Castlehill → Royal Mile → St Giles' → Victoria Street → Grassmarket. Dip into the closes and wander through Greyfriars Kirkyard and Candlemaker Row.</p><span class="tag">WALK & EXPLORE</span><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
+    <article class="item"><span class="dot"></span><div class="time">17:00</div><div class="card" data-speech="Stop for drinks in the Grassmarket, then make your way back towards the Royal Mile."><h3>Drinks in the Grassmarket</h3><p>Stop for a drink, then make your way back towards the Royal Mile.</p><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
     <article class="item"><span class="dot"></span><div class="time">18:30 / 19:00</div><div class="card special" data-speech="Dinner at Makars Mash Bar. This is our first proper Scottish meal, with famous mash and classic Scottish dishes including haggis, steak and sausages."><h3>Makars Mash Bar</h3><p>Our first proper Scottish meal. A great place for mash, haggis, steak, sausages and other comforting Scottish dishes.</p><div class="links"><a class="btn" href="https://www.makarsmashbar.co.uk/" target="_blank">Website ↗</a></div><span class="tag">DINNER</span><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
-    <article class="item"><span class="dot"></span><div class="time">20:30+</div><div class="card"><h3>Edinburgh Fringe</h3><p>One good comedy, theatre or cabaret show. Then drinks around the Old Town if you're still going.</p><span class="tag">BOOK A SHOW</span></div></article>
+    <article class="item"><span class="dot"></span><div class="time">20:30+</div><div class="card" data-speech="Enjoy a Fringe show - comedy, theatre or cabaret. Then drinks around the Old Town if you're still going."><h3>Edinburgh Fringe</h3><p>One good comedy, theatre or cabaret show. Then drinks around the Old Town if you're still going.</p><span class="tag">BOOK A SHOW</span><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
   </div>
 </section>
 
 <section class="day" id="fri">
-  <div class="day-head"><div class="date">Friday · 28 August</div><h2>Castle & Holyrood</h2><p>The big sightseeing day — with a relaxed evening afterwards.</p></div><div class="day-audio" data-speech="Friday is our big sightseeing day. We have Edinburgh Castle booked for 10:30, followed by the Royal Mile, Holyroodhouse and Holyrood Park. In the evening, we'll have dinner and see another Fringe show instead of the Tattoo.">
+  <div class="day-head"><div class="date">Friday · 28 August</div><h2>Castle & Holyrood</h2><p>The big sightseeing day — with a relaxed evening afterwards.</p></div><div class="day-audio" data-speech="Friday is our big sightseeing day. We have Edinburgh Castle booked for 10:30, followed by the Royal Mile, Holyroodhouse and Holyrood Park. In the evening, we'll have dinner and see another Fringe show.">
       <button class="audio-btn" aria-label="Play day overview"><span class="play">▶</span><span class="stop">■</span></button>
       <div class="day-audio-text"><strong>Day overview</strong><span>Tap to listen</span></div>
     </div>
   <div class="timeline">
-    <article class="item"><span class="dot"></span><div class="time">08:30</div><div class="card"><h3>Breakfast</h3><p>Breakfast near the Old Town. Aim to leave around 09:45.</p></div></article>
-    <article class="item"><span class="dot"></span><div class="time">10:30</div><div class="card special"><h3>Edinburgh Castle</h3><p><strong>Booked.</strong> Allow about 2½ hours. See the Crown Jewels, Stone of Destiny, Great Hall, St Margaret's Chapel, Mons Meg, National War Museum and the views.</p><div class="links"><a class="btn" href="https://www.edinburghcastle.scot/" target="_blank">Castle ↗</a></div><span class="tag">BOOKED · 10:30</span></div></article>
-    <article class="item"><span class="dot"></span><div class="time">13:00</div><div class="card"><h3>Lunch & Royal Mile</h3><p>Walk down the Royal Mile and stop for lunch.</p></div></article>
-    <article class="item"><span class="dot"></span><div class="time">14:00</div><div class="card"><h3>Palace of Holyroodhouse</h3><p>Explore the royal apartments, abbey and gardens. Allow around 1½–2 hours.</p><div class="links"><a class="btn" href="https://www.rct.uk/visit/palace-of-holyroodhouse" target="_blank">Palace ↗</a></div></div></article>
-    <article class="item"><span class="dot"></span><div class="time">16:00</div><div class="card"><h3>Holyrood Park</h3><p>Take an easy walk around the park. Save the full Arthur's Seat climb for Sunday.</p></div></article>
-    <article class="item"><span class="dot"></span><div class="time">18:30</div><div class="card"><h3>Relaxed dinner</h3><p>Choose somewhere around the Old Town. Monteiths for something more romantic, or Whiski Rooms for a casual Scottish meal.</p></div></article>
-    <article class="item"><span class="dot"></span><div class="time">20:30+</div><div class="card"><h3>Fringe show</h3><p>A second Fringe evening instead of the Tattoo, followed by drinks around Cowgate, Grassmarket or the Old Town.</p><span class="tag">BOOK A SHOW</span></div></article>
+    <article class="item"><span class="dot"></span><div class="time">08:30</div><div class="card" data-speech="Breakfast near the Old Town. Aim to leave around 09:45."><h3>Breakfast</h3><p>Breakfast near the Old Town. Aim to leave around 09:45.</p><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
+    <article class="item"><span class="dot"></span><div class="time">10:30</div><div class="card special" data-speech="Edinburgh Castle. Booked for 10:30. Allow about 2 and a half hours. See the Crown Jewels, Stone of Destiny, Great Hall, St Margaret's Chapel, Mons Meg, and the National War Museum."><h3>Edinburgh Castle</h3><p><strong>Booked.</strong> Allow about 2½ hours. See the Crown Jewels, Stone of Destiny, Great Hall, St Margaret's Chapel, Mons Meg, National War Museum and the views.</p><div class="links"><a class="btn" href="https://www.edinburghcastle.scot/" target="_blank">Castle ↗</a></div><span class="tag">BOOKED · 10:30</span><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
+    <article class="item"><span class="dot"></span><div class="time">13:00</div><div class="card" data-speech="Walk down the Royal Mile and stop for lunch."><h3>Lunch & Royal Mile</h3><p>Walk down the Royal Mile and stop for lunch.</p><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
+    <article class="item"><span class="dot"></span><div class="time">14:00</div><div class="card" data-speech="Palace of Holyroodhouse. Explore the royal apartments, abbey and gardens. Allow around 1 and a half to 2 hours."><h3>Palace of Holyroodhouse</h3><p>Explore the royal apartments, abbey and gardens. Allow around 1½–2 hours.</p><div class="links"><a class="btn" href="https://www.rct.uk/visit/palace-of-holyroodhouse" target="_blank">Palace ↗</a></div><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
+    <article class="item"><span class="dot"></span><div class="time">16:00</div><div class="card" data-speech="Take an easy walk around Holyrood Park. Save the full Arthur's Seat climb for Sunday."><h3>Holyrood Park</h3><p>Take an easy walk around the park. Save the full Arthur's Seat climb for Sunday.</p><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
+    <article class="item"><span class="dot"></span><div class="time">18:30</div><div class="card" data-speech="Relaxed dinner. Choose somewhere around the Old Town. Monteiths for something more romantic, or Whiski Rooms for a casual Scottish meal."><h3>Relaxed dinner</h3><p>Choose somewhere around the Old Town. Monteiths for something more romantic, or Whiski Rooms for a casual Scottish meal.</p><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
+    <article class="item"><span class="dot"></span><div class="time">20:30+</div><div class="card" data-speech="A second Fringe evening, followed by drinks around Cowgate, Grassmarket or the Old Town."><h3>Fringe show</h3><p>A second Fringe evening, followed by drinks around Cowgate, Grassmarket or the Old Town.</p><span class="tag">BOOK A SHOW</span><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
   </div>
 </section>
 
@@ -114,15 +432,15 @@ a.btn{display:inline-block;text-decoration:none;color:var(--dark);background:#ee
       <div class="day-audio-text"><strong>Day overview</strong><span>Tap to listen</span></div>
     </div>
   <div class="timeline">
-    <article class="item"><span class="dot"></span><div class="time">09:00</div><div class="card"><h3>Breakfast</h3><p>Take your time.</p></div></article>
-    <article class="item"><span class="dot"></span><div class="time">10:00</div><div class="card"><h3>Dean Village</h3><p>Explore the village and walk along the Water of Leith.</p></div></article>
-    <article class="item"><span class="dot"></span><div class="time">11:30</div><div class="card"><h3>Stockbridge</h3><p>Coffee, independent shops and a relaxed wander.</p></div></article>
-    <article class="item"><span class="dot"></span><div class="time">13:00</div><div class="card"><h3>National Museum of Scotland</h3><p>Focus on Scottish history, archaeology and the spectacular central hall. About 1½ hours is enough.</p><div class="links"><a class="btn" href="https://www.nms.ac.uk/national-museum-of-scotland/" target="_blank">Museum ↗</a></div></div></article>
-    <article class="item"><span class="dot"></span><div class="time">15:00</div><div class="card"><h3>Coffee, cake & Fringe atmosphere</h3><p>Take a break and enjoy the performers and crowds around the Old Town.</p></div></article>
-    <article class="item"><span class="dot"></span><div class="time">16:00</div><div class="card"><h3>Whisky</h3><p>Do the Scotch Whisky Experience or simply find a good whisky bar and try a few interesting drams.</p><div class="links"><a class="btn" href="https://www.scotchwhiskyexperience.co.uk/" target="_blank">Whisky Experience ↗</a></div></div></article>
+    <article class="item"><span class="dot"></span><div class="time">09:00</div><div class="card" data-speech="Breakfast. Take your time."><h3>Breakfast</h3><p>Take your time.</p><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
+    <article class="item"><span class="dot"></span><div class="time">10:00</div><div class="card" data-speech="Dean Village. Explore the village and walk along the Water of Leith."><h3>Dean Village</h3><p>Explore the village and walk along the Water of Leith.</p><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
+    <article class="item"><span class="dot"></span><div class="time">11:30</div><div class="card" data-speech="Stockbridge. Coffee, independent shops and a relaxed wander."><h3>Stockbridge</h3><p>Coffee, independent shops and a relaxed wander.</p><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
+    <article class="item"><span class="dot"></span><div class="time">13:00</div><div class="card" data-speech="National Museum of Scotland. Focus on Scottish history, archaeology and the spectacular central hall. About 1 and a half hours is enough."><h3>National Museum of Scotland</h3><p>Focus on Scottish history, archaeology and the spectacular central hall. About 1½ hours is enough.</p><div class="links"><a class="btn" href="https://www.nms.ac.uk/national-museum-of-scotland/" target="_blank">Museum ↗</a></div><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
+    <article class="item"><span class="dot"></span><div class="time">15:00</div><div class="card" data-speech="Coffee, cake and Fringe atmosphere. Take a break and enjoy the performers and crowds around the Old Town."><h3>Coffee, cake & Fringe atmosphere</h3><p>Take a break and enjoy the performers and crowds around the Old Town.</p><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
+    <article class="item"><span class="dot"></span><div class="time">16:00</div><div class="card" data-speech="Whisky. Do the Scotch Whisky Experience or simply find a good whisky bar and try a few interesting drams."><h3>Whisky</h3><p>Do the Scotch Whisky Experience or simply find a good whisky bar and try a few interesting drams.</p><div class="links"><a class="btn" href="https://www.scotchwhiskyexperience.co.uk/" target="_blank">Whisky Experience ↗</a></div><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
     <article class="item"><span class="dot"></span><div class="time">18:00–19:00</div><div class="card special" data-speech="Saturday evening: Sandy Bell's. This is our traditional live music pub. It is a genuine Edinburgh folk pub on Forrest Road. Get a drink, find a seat and settle in for the live music."><h3>Sandy Bell's 🎻</h3><p><strong>The traditional live music pub.</strong> A genuine Edinburgh folk pub at 25 Forrest Road. Get a drink, find a seat and settle in for live music.</p><span class="tag">MUST DO</span><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
-    <article class="item"><span class="dot"></span><div class="time">20:00</div><div class="card"><h3>Dinner</h3><p>Head back towards the Old Town for dinner. Monteiths is an option for something special.</p></div></article>
-    <article class="item"><span class="dot"></span><div class="time">LATER</div><div class="card"><h3>Optional: The Royal Oak</h3><p>If you're still enjoying the music, continue the night at another small live-music venue near the Old Town.</p></div></article>
+    <article class="item"><span class="dot"></span><div class="time">20:00</div><div class="card" data-speech="Dinner. Head back towards the Old Town for dinner. Monteiths is an option for something special."><h3>Dinner</h3><p>Head back towards the Old Town for dinner. Monteiths is an option for something special.</p><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
+    <article class="item"><span class="dot"></span><div class="time">LATER</div><div class="card" data-speech="Optional: The Royal Oak. If you're still enjoying the music, continue the night at another small live-music venue near the Old Town."><h3>Optional: The Royal Oak</h3><p>If you're still enjoying the music, continue the night at another small live-music venue near the Old Town.</p><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
   </div>
 </section>
 
@@ -132,15 +450,15 @@ a.btn{display:inline-block;text-decoration:none;color:var(--dark);background:#ee
       <div class="day-audio-text"><strong>Day overview</strong><span>Tap to listen</span></div>
     </div>
   <div class="timeline">
-    <article class="item"><span class="dot"></span><div class="time">08:30 / 09:00</div><div class="card"><h3>Breakfast</h3><p>One final Edinburgh breakfast.</p></div></article>
+    <article class="item"><span class="dot"></span><div class="time">08:30 / 09:00</div><div class="card" data-speech="Breakfast. One final Edinburgh breakfast."><h3>Breakfast</h3><p>One final Edinburgh breakfast.</p><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
     <article class="item"><span class="dot"></span><div class="time">10:00</div><div class="card special" data-speech="Sunday morning: Arthur's Seat. Climb for the classic Edinburgh panorama and allow around two hours including photographs. If the weather is poor, swap it for Calton Hill."><h3>Arthur's Seat 🌄</h3><p>Climb for the classic Edinburgh panorama. Allow around two hours including photos. If the weather is poor, swap it for Calton Hill.</p><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
-    <article class="item"><span class="dot"></span><div class="time">12:30</div><div class="card"><h3>Final Royal Mile wander</h3><p>Walk through Holyrood and the Canongate, then have lunch and take one last look around the Old Town.</p></div></article>
-    <article class="item"><span class="dot"></span><div class="time">14:00</div><div class="card"><h3>Princes Street & New Town</h3><p>Walk Princes Street, George Street and Charlotte Square. Finish with a final drink or coffee.</p></div></article>
-    <article class="item"><span class="dot"></span><div class="time">15:00–16:00</div><div class="card"><h3>Home</h3><p>Collect your things and head home, depending on your travel arrangements.</p></div></article>
+    <article class="item"><span class="dot"></span><div class="time">12:30</div><div class="card" data-speech="Final Royal Mile wander. Walk through Holyrood and the Canongate, then have lunch and take one last look around the Old Town."><h3>Final Royal Mile wander</h3><p>Walk through Holyrood and the Canongate, then have lunch and take one last look around the Old Town.</p><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
+    <article class="item"><span class="dot"></span><div class="time">14:00</div><div class="card" data-speech="Princes Street and New Town. Walk Princes Street, George Street and Charlotte Square. Finish with a final drink or coffee."><h3>Princes Street & New Town</h3><p>Walk Princes Street, George Street and Charlotte Square. Finish with a final drink or coffee.</p><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
+    <article class="item"><span class="dot"></span><div class="time">15:00–16:00</div><div class="card" data-speech="Home. Collect your things and head home, depending on your travel arrangements."><h3>Home</h3><p>Collect your things and head home, depending on your travel arrangements.</p><div class="audio-row"><button class="audio-btn" aria-label="Play audio"><span class="play">▶</span><span class="stop">■</span></button><span class="audio-label">LISTEN</span></div></div></article>
   </div>
 </section>
 
-<div class="footer">Edinburgh · 27–30 August 2026<br>Castle booked for Friday at 10:30 · Military Tattoo excluded</div>
+<div class="footer">Edinburgh · 27–30 August 2026<br><span>Castle booked for Friday at 10:30</span></div>
 </main>
 
 <script>
@@ -185,3 +503,4 @@ document.addEventListener('visibilitychange',()=>{if(document.hidden) stopSpeech
 </script>
 </body>
 </html>
+```
