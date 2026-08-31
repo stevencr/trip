@@ -17,7 +17,7 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #f6f2eb;  · soft limestone
+      background: #f4efe6;  · soft limestone
       color: #2d3e3f;
       line-height: 1.5;
       padding: 2rem 1rem;
@@ -149,12 +149,23 @@
       margin-left: 0.2rem;
     }
 
+    /* activity row with audio */
     .activity {
       display: flex;
-      gap: 0.8rem;
+      gap: 0.7rem;
       margin-bottom: 1.1rem;
       align-items: flex-start;
+      background: #faf7f1;
+      padding: 0.5rem 0.6rem 0.5rem 0.8rem;
+      border-radius: 1.5rem;
+      border: 1px solid #e6ddd0;
+      transition: 0.1s ease;
     }
+    .activity:hover {
+      background: #f6f0e6;
+      border-color: #c7bbaa;
+    }
+
     .activity-icon {
       font-size: 1.4rem;
       min-width: 2rem;
@@ -163,34 +174,73 @@
     }
     .activity-content {
       flex: 1;
+      min-width: 0;
     }
     .activity-time {
       font-weight: 600;
       color: #4b625a;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       letter-spacing: 0.3px;
       background: #ece4d8;
       display: inline-block;
       padding: 0.05rem 0.7rem;
       border-radius: 16px;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.1rem;
     }
     .activity-desc {
       font-weight: 500;
       color: #1d3330;
-      font-size: 1.05rem;
+      font-size: 1rem;
     }
-    .activity-desc + .activity-note {
-      font-size: 0.9rem;
-      color: #52635d;
-      margin-top: 0.1rem;
+    .activity-desc strong {
+      font-weight: 600;
+      color: #1e3d38;
     }
     .activity-note {
       font-weight: 400;
       color: #526b62;
-      font-size: 0.9rem;
-      padding-left: 0.2rem;
+      font-size: 0.85rem;
+      padding-left: 0.1rem;
+      display: block;
+      margin-top: 0.05rem;
     }
+
+    /* audio player next to each activity */
+    .activity-audio {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 2.2rem;
+      margin-top: 0.1rem;
+    }
+    .activity-audio audio {
+      width: 30px;
+      height: 30px;
+      border-radius: 30px;
+      background: #f4efe6;
+      outline: none;
+      border: 1px solid #ccc2b2;
+    }
+    .activity-audio audio::-webkit-media-controls-panel {
+      background: #f4efe6;
+    }
+    .activity-audio audio::-webkit-media-controls-play-button {
+      background-color: #4b6b5e;
+      border-radius: 50%;
+      color: white;
+    }
+    /* small screens: audio stays inline */
+    @media (max-width: 480px) {
+      .activity-audio audio {
+        width: 26px;
+        height: 26px;
+      }
+      .activity {
+        flex-wrap: wrap;
+        padding: 0.5rem;
+      }
+    }
+
     .divider-dot {
       height: 1px;
       background: linear-gradient(to right, #d6ccbc, transparent);
@@ -199,9 +249,9 @@
     .highlight-tip {
       background: #e6ede5;
       border-radius: 20px;
-      padding: 0.5rem 1rem;
-      margin: 1rem 0 0.2rem;
-      font-size: 0.9rem;
+      padding: 0.4rem 1rem;
+      margin: 0.8rem 0 0.2rem;
+      font-size: 0.85rem;
       display: inline-block;
       color: #25433d;
       border-left: 4px solid #788f80;
@@ -226,8 +276,17 @@
       font-weight: 600;
       color: #1c3530;
     }
+    .red-dragon-badge {
+      background: #8f2e2e;
+      color: #f6ede4;
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      border: 1px solid #a84343;
+    }
 
-    /* audio player - subtle */
     .audio-wrapper {
       margin-top: 1.8rem;
       display: flex;
@@ -249,16 +308,6 @@
       font-size: 0.9rem;
       letter-spacing: 0.3px;
     }
-    audio {
-      width: 200px;
-      height: 36px;
-      border-radius: 40px;
-      background: #f4efe6;
-      outline: none;
-    }
-    audio::-webkit-media-controls-panel {
-      background: #f4efe6;
-    }
 
     footer {
       margin-top: 1.5rem;
@@ -269,7 +318,6 @@
       padding-top: 1.2rem;
       width: 100%;
     }
-
     .weather-tip {
       background: #d8e0d3;
       border-radius: 30px;
@@ -282,14 +330,14 @@
 <body>
 <div class="container">
 
-  <!-- header -->
+  <!-- header with Red Dragon -->
   <div class="hero">
     <div>
       <h1>
         Kirkby Lonsdale
         <small>a two‑day escape · 26 September</small>
       </h1>
-      <div class="for-karen-steven">✨ for Karen &amp; Steven</div>
+      <div class="for-karen-steven">✨ for Karen &amp; Steven · staying at <strong>The Red Dragon</strong></div>
     </div>
     <div class="date-badge">
       📅 26–27 Sept
@@ -304,12 +352,18 @@
         <span>①</span> Day 1 · 26 Sept
       </div>
 
+      <!-- each activity has its own audio player (sample tracks) -->
       <div class="activity">
         <div class="activity-icon">☕</div>
         <div class="activity-content">
           <div class="activity-time">09:00 – 10:30</div>
           <div class="activity-desc">Arrival &amp; breakfast at <strong>“The Orange Tree”</strong></div>
-          <div class="activity-note">Cosy café, try the Cumbrian breakfast &amp; homemade scones.</div>
+          <div class="activity-note">Cosy café, Cumbrian breakfast &amp; homemade scones.</div>
+        </div>
+        <div class="activity-audio">
+          <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+          </audio>
         </div>
       </div>
 
@@ -318,7 +372,12 @@
         <div class="activity-content">
           <div class="activity-time">10:45 – 12:30</div>
           <div class="activity-desc">Ruskin’s View &amp; River Lune wander</div>
-          <div class="activity-note">The iconic view that inspired Turner. Walk along the riverbank, spot herons.</div>
+          <div class="activity-note">Iconic view, walk along the riverbank, spot herons.</div>
+        </div>
+        <div class="activity-audio">
+          <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
+          </audio>
         </div>
       </div>
 
@@ -327,7 +386,12 @@
         <div class="activity-content">
           <div class="activity-time">12:45 – 13:45</div>
           <div class="activity-desc">Kirkby Lonsdale market town stroll</div>
-          <div class="activity-note">Explore independent shops, antique stores &amp; the old Market Cross.</div>
+          <div class="activity-note">Independent shops, antiques &amp; the old Market Cross.</div>
+        </div>
+        <div class="activity-audio">
+          <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" type="audio/mpeg">
+          </audio>
         </div>
       </div>
 
@@ -336,7 +400,12 @@
         <div class="activity-content">
           <div class="activity-time">14:00 – 15:30</div>
           <div class="activity-desc">Lunch at <strong>“Lunesdale Deli”</strong></div>
-          <div class="activity-note">Local cheeses, artisan sandwiches &amp; a glass of Cumbrian ale.</div>
+          <div class="activity-note">Local cheeses, artisan sandwiches &amp; Cumbrian ale.</div>
+        </div>
+        <div class="activity-audio">
+          <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3" type="audio/mpeg">
+          </audio>
         </div>
       </div>
 
@@ -345,7 +414,12 @@
         <div class="activity-content">
           <div class="activity-time">15:45 – 17:30</div>
           <div class="activity-desc">Sizergh Castle &amp; Gardens (National Trust)</div>
-          <div class="activity-note">Just 10 min drive. Medieval tower, lake views &amp; herbaceous borders.</div>
+          <div class="activity-note">10 min drive. Medieval tower, lake views &amp; borders.</div>
+        </div>
+        <div class="activity-audio">
+          <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3" type="audio/mpeg">
+          </audio>
         </div>
       </div>
 
@@ -354,7 +428,12 @@
         <div class="activity-content">
           <div class="activity-time">19:00 – late</div>
           <div class="activity-desc">Dinner at <strong>“The Royal Barn”</strong></div>
-          <div class="activity-note">Seasonal British menu, book a window table for sunset views.</div>
+          <div class="activity-note">Seasonal British menu, book a window table.</div>
+        </div>
+        <div class="activity-audio">
+          <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3" type="audio/mpeg">
+          </audio>
         </div>
       </div>
 
@@ -372,7 +451,12 @@
         <div class="activity-content">
           <div class="activity-time">08:30 – 09:30</div>
           <div class="activity-desc">Leisurely breakfast at <strong>“The Cobbles”</strong></div>
-          <div class="activity-note">Famous for sticky buns and locally roasted coffee.</div>
+          <div class="activity-note">Famous sticky buns &amp; locally roasted coffee.</div>
+        </div>
+        <div class="activity-audio">
+          <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg">
+          </audio>
         </div>
       </div>
 
@@ -381,7 +465,12 @@
         <div class="activity-content">
           <div class="activity-time">10:00 – 12:30</div>
           <div class="activity-desc">Walk to <strong>Radstone &amp; Casterton</strong> circular</div>
-          <div class="activity-note">Moderate 4‑mile loop with panoramic views of the Lune Valley.</div>
+          <div class="activity-note">Moderate 4‑mile loop, panoramic Lune Valley views.</div>
+        </div>
+        <div class="activity-audio">
+          <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3" type="audio/mpeg">
+          </audio>
         </div>
       </div>
 
@@ -390,7 +479,12 @@
         <div class="activity-content">
           <div class="activity-time">13:00 – 14:30</div>
           <div class="activity-desc">Pub lunch at <strong>“The Plough”</strong></div>
-          <div class="activity-note">Traditional Sunday roast with all the trimmings. Booking advised.</div>
+          <div class="activity-note">Traditional Sunday roast, booking advised.</div>
+        </div>
+        <div class="activity-audio">
+          <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3" type="audio/mpeg">
+          </audio>
         </div>
       </div>
 
@@ -399,7 +493,12 @@
         <div class="activity-content">
           <div class="activity-time">15:00 – 17:00</div>
           <div class="activity-desc">Leck Beck &amp; Fairy Steps</div>
-          <div class="activity-note">A gentle woodland walk, limestone pavements &amp; hidden waterfall.</div>
+          <div class="activity-note">Woodland walk, limestone pavements &amp; waterfall.</div>
+        </div>
+        <div class="activity-audio">
+          <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3" type="audio/mpeg">
+          </audio>
         </div>
       </div>
 
@@ -408,7 +507,12 @@
         <div class="activity-content">
           <div class="activity-time">17:15 – 18:00</div>
           <div class="activity-desc">Afternoon tea at <strong>“Farrer’s Tea Room”</strong></div>
-          <div class="activity-note">Scones, clotted cream &amp; homemade jam – a perfect finale.</div>
+          <div class="activity-note">Scones, clotted cream &amp; homemade jam.</div>
+        </div>
+        <div class="activity-audio">
+          <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3" type="audio/mpeg">
+          </audio>
         </div>
       </div>
 
@@ -417,7 +521,12 @@
         <div class="activity-content">
           <div class="activity-time">18:30 – 19:30</div>
           <div class="activity-desc">Sunset at <strong>Top o’ th’ Hill</strong></div>
-          <div class="activity-note">Panoramic view over the Howgill Fells – bring a blanket.</div>
+          <div class="activity-note">Panoramic view over the Howgill Fells.</div>
+        </div>
+        <div class="activity-audio">
+          <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3" type="audio/mpeg">
+          </audio>
         </div>
       </div>
 
@@ -425,18 +534,18 @@
     </div>
   </div>
 
-  <!-- extra info / practical -->
+  <!-- extra info: Red Dragon + practicals -->
   <div class="extra-note">
-    <p><strong>📍 Where to stay:</strong> The Kings Arms Hotel · classic coaching inn with four-poster rooms.</p>
+    <p><span class="red-dragon-badge">🏨 The Red Dragon</span> · your cosy base in Kirkby Lonsdale</p>
     <p><span class="weather-tip">⛅ 26 Sept: 13°C · partly cloudy, chance of light rain.</span></p>
   </div>
 
-  <!-- audio player (ambient) -->
+  <!-- ambient audio (optional extra) -->
   <div class="audio-wrapper">
-    <span>🎵 · gentle Cumbrian ambience</span>
+    <span>🎵 · Cumbrian ambience (background)</span>
     <audio controls loop>
       <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-      Your browser does not support the audio element. (sample track)
+      Your browser does not support the audio element.
     </audio>
   </div>
 
