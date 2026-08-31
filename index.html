@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kirkby Lonsdale · Karen & Steven · 26 Sept</title>
-  <!-- Google Font & simple reset -->
+  <!-- Google Font & reset -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #f4efe6;  · soft limestone
+      background: #f4efe6;
       color: #2d3e3f;
       line-height: 1.5;
       padding: 2rem 1rem;
@@ -36,7 +36,6 @@
       padding: 2rem 2rem 2.5rem;
       box-shadow: 0 20px 40px -12px rgba(40, 50, 40, 0.25);
       border: 1px solid #e6dfd4;
-      transition: all 0.2s ease;
     }
 
     /* header */
@@ -87,8 +86,12 @@
       font-weight: 500;
       margin-top: 0.4rem;
     }
+    .for-karen-steven strong {
+      color: #8f2e2e;
+      font-weight: 600;
+    }
 
-    /* two column layout for days */
+    /* days grid */
     .days-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -149,17 +152,18 @@
       margin-left: 0.2rem;
     }
 
-    /* activity row with audio */
+    /* activity row – each with a play button (audio icon) */
     .activity {
       display: flex;
       gap: 0.7rem;
-      margin-bottom: 1.1rem;
-      align-items: flex-start;
+      margin-bottom: 1rem;
+      align-items: center;
       background: #faf7f1;
       padding: 0.5rem 0.6rem 0.5rem 0.8rem;
       border-radius: 1.5rem;
       border: 1px solid #e6ddd0;
       transition: 0.1s ease;
+      flex-wrap: wrap;
     }
     .activity:hover {
       background: #f6f0e6;
@@ -168,18 +172,17 @@
 
     .activity-icon {
       font-size: 1.4rem;
-      min-width: 2rem;
+      min-width: 1.8rem;
       text-align: center;
-      margin-top: 0.1rem;
     }
     .activity-content {
       flex: 1;
-      min-width: 0;
+      min-width: 140px;
     }
     .activity-time {
       font-weight: 600;
       color: #4b625a;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       letter-spacing: 0.3px;
       background: #ece4d8;
       display: inline-block;
@@ -200,52 +203,40 @@
       font-weight: 400;
       color: #526b62;
       font-size: 0.85rem;
-      padding-left: 0.1rem;
       display: block;
       margin-top: 0.05rem;
     }
 
-    /* audio player next to each activity */
-    .activity-audio {
-      display: flex;
+    /* play button – just a play icon, triggers speech */
+    .play-btn {
+      background: #4b6b5e;
+      border: none;
+      color: white;
+      font-size: 1.1rem;
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 50%;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width: 2.2rem;
-      margin-top: 0.1rem;
+      cursor: pointer;
+      transition: 0.15s;
+      box-shadow: 0 2px 6px rgba(40, 50, 40, 0.2);
+      flex-shrink: 0;
+      border: 1px solid #3a5a4d;
     }
-    .activity-audio audio {
-      width: 30px;
-      height: 30px;
-      border-radius: 30px;
-      background: #f4efe6;
-      outline: none;
-      border: 1px solid #ccc2b2;
+    .play-btn:hover {
+      background: #2d4f41;
+      transform: scale(1.05);
     }
-    .activity-audio audio::-webkit-media-controls-panel {
-      background: #f4efe6;
+    .play-btn:active {
+      transform: scale(0.95);
     }
-    .activity-audio audio::-webkit-media-controls-play-button {
-      background-color: #4b6b5e;
-      border-radius: 50%;
-      color: white;
-    }
-    /* small screens: audio stays inline */
-    @media (max-width: 480px) {
-      .activity-audio audio {
-        width: 26px;
-        height: 26px;
-      }
-      .activity {
-        flex-wrap: wrap;
-        padding: 0.5rem;
-      }
+    .play-btn.playing {
+      background: #9e7e5e;
+      border-color: #7d6248;
     }
 
-    .divider-dot {
-      height: 1px;
-      background: linear-gradient(to right, #d6ccbc, transparent);
-      margin: 0.2rem 0 0.8rem 0.2rem;
-    }
     .highlight-tip {
       background: #e6ede5;
       border-radius: 20px;
@@ -286,27 +277,12 @@
       letter-spacing: 0.5px;
       border: 1px solid #a84343;
     }
-
-    .audio-wrapper {
-      margin-top: 1.8rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.8rem;
-      flex-wrap: wrap;
-      background: #e2dacd;
-      padding: 0.6rem 1.8rem 0.6rem 1.5rem;
-      border-radius: 60px;
-      border: 1px solid #cbbfae;
-      width: fit-content;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .audio-wrapper span {
-      font-weight: 400;
-      color: #3e5851;
+    .weather-tip {
+      background: #d8e0d3;
+      border-radius: 30px;
+      padding: 0.2rem 1.4rem;
       font-size: 0.9rem;
-      letter-spacing: 0.3px;
+      color: #1f3a33;
     }
 
     footer {
@@ -318,12 +294,17 @@
       padding-top: 1.2rem;
       width: 100%;
     }
-    .weather-tip {
-      background: #d8e0d3;
-      border-radius: 30px;
-      padding: 0.2rem 1.4rem;
-      font-size: 0.9rem;
-      color: #1f3a33;
+
+    /* small screen adjustments */
+    @media (max-width: 480px) {
+      .activity {
+        padding: 0.5rem 0.4rem;
+      }
+      .play-btn {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -344,214 +325,254 @@
     </div>
   </div>
 
-  <!-- 2 days grid -->
+  <!-- days grid -->
   <div class="days-grid">
-    <!-- DAY 1 · Saturday 26 -->
+    <!-- DAY 1 -->
     <div class="day-card">
       <div class="day-title">
         <span>①</span> Day 1 · 26 Sept
       </div>
 
-      <!-- each activity has its own audio player (sample tracks) -->
-      <div class="activity">
+      <!-- each activity has a play button that reads the description + note -->
+      <div class="activity" data-speech="Arrival and breakfast at The Orange Tree. Cosy café, Cumbrian breakfast and homemade scones.">
         <div class="activity-icon">☕</div>
         <div class="activity-content">
           <div class="activity-time">09:00 – 10:30</div>
           <div class="activity-desc">Arrival &amp; breakfast at <strong>“The Orange Tree”</strong></div>
           <div class="activity-note">Cosy café, Cumbrian breakfast &amp; homemade scones.</div>
         </div>
-        <div class="activity-audio">
-          <audio controls>
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
-          </audio>
-        </div>
+        <button class="play-btn" aria-label="Play audio for this item">▶</button>
       </div>
 
-      <div class="activity">
+      <div class="activity" data-speech="Ruskin’s View and River Lune wander. Iconic view, walk along the riverbank, spot herons.">
         <div class="activity-icon">🌳</div>
         <div class="activity-content">
           <div class="activity-time">10:45 – 12:30</div>
           <div class="activity-desc">Ruskin’s View &amp; River Lune wander</div>
           <div class="activity-note">Iconic view, walk along the riverbank, spot herons.</div>
         </div>
-        <div class="activity-audio">
-          <audio controls>
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
-          </audio>
-        </div>
+        <button class="play-btn" aria-label="Play audio for this item">▶</button>
       </div>
 
-      <div class="activity">
+      <div class="activity" data-speech="Kirkby Lonsdale market town stroll. Independent shops, antiques and the old Market Cross.">
         <div class="activity-icon">🛍️</div>
         <div class="activity-content">
           <div class="activity-time">12:45 – 13:45</div>
           <div class="activity-desc">Kirkby Lonsdale market town stroll</div>
           <div class="activity-note">Independent shops, antiques &amp; the old Market Cross.</div>
         </div>
-        <div class="activity-audio">
-          <audio controls>
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" type="audio/mpeg">
-          </audio>
-        </div>
+        <button class="play-btn" aria-label="Play audio for this item">▶</button>
       </div>
 
-      <div class="activity">
+      <div class="activity" data-speech="Lunch at Lunesdale Deli. Local cheeses, artisan sandwiches and Cumbrian ale.">
         <div class="activity-icon">🍽️</div>
         <div class="activity-content">
           <div class="activity-time">14:00 – 15:30</div>
           <div class="activity-desc">Lunch at <strong>“Lunesdale Deli”</strong></div>
           <div class="activity-note">Local cheeses, artisan sandwiches &amp; Cumbrian ale.</div>
         </div>
-        <div class="activity-audio">
-          <audio controls>
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3" type="audio/mpeg">
-          </audio>
-        </div>
+        <button class="play-btn" aria-label="Play audio for this item">▶</button>
       </div>
 
-      <div class="activity">
+      <div class="activity" data-speech="Sizergh Castle and Gardens, National Trust. Ten minute drive. Medieval tower, lake views and borders.">
         <div class="activity-icon">🏰</div>
         <div class="activity-content">
           <div class="activity-time">15:45 – 17:30</div>
           <div class="activity-desc">Sizergh Castle &amp; Gardens (National Trust)</div>
           <div class="activity-note">10 min drive. Medieval tower, lake views &amp; borders.</div>
         </div>
-        <div class="activity-audio">
-          <audio controls>
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3" type="audio/mpeg">
-          </audio>
-        </div>
+        <button class="play-btn" aria-label="Play audio for this item">▶</button>
       </div>
 
-      <div class="activity">
+      <div class="activity" data-speech="Dinner at The Royal Barn. Seasonal British menu, book a window table.">
         <div class="activity-icon">🍷</div>
         <div class="activity-content">
           <div class="activity-time">19:00 – late</div>
           <div class="activity-desc">Dinner at <strong>“The Royal Barn”</strong></div>
           <div class="activity-note">Seasonal British menu, book a window table.</div>
         </div>
-        <div class="activity-audio">
-          <audio controls>
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3" type="audio/mpeg">
-          </audio>
-        </div>
+        <button class="play-btn" aria-label="Play audio for this item">▶</button>
       </div>
 
       <div class="highlight-tip">🌟 Evening stroll to Devil’s Bridge – atmospheric under moonlight.</div>
     </div>
 
-    <!-- DAY 2 · Sunday 27 -->
+    <!-- DAY 2 -->
     <div class="day-card">
       <div class="day-title">
         <span>②</span> Day 2 · 27 Sept
       </div>
 
-      <div class="activity">
+      <div class="activity" data-speech="Leisurely breakfast at The Cobbles. Famous sticky buns and locally roasted coffee.">
         <div class="activity-icon">🥐</div>
         <div class="activity-content">
           <div class="activity-time">08:30 – 09:30</div>
           <div class="activity-desc">Leisurely breakfast at <strong>“The Cobbles”</strong></div>
           <div class="activity-note">Famous sticky buns &amp; locally roasted coffee.</div>
         </div>
-        <div class="activity-audio">
-          <audio controls>
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg">
-          </audio>
-        </div>
+        <button class="play-btn" aria-label="Play audio for this item">▶</button>
       </div>
 
-      <div class="activity">
+      <div class="activity" data-speech="Walk to Radstone and Casterton circular. Moderate 4 mile loop, panoramic Lune Valley views.">
         <div class="activity-icon">⛰️</div>
         <div class="activity-content">
           <div class="activity-time">10:00 – 12:30</div>
           <div class="activity-desc">Walk to <strong>Radstone &amp; Casterton</strong> circular</div>
           <div class="activity-note">Moderate 4‑mile loop, panoramic Lune Valley views.</div>
         </div>
-        <div class="activity-audio">
-          <audio controls>
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3" type="audio/mpeg">
-          </audio>
-        </div>
+        <button class="play-btn" aria-label="Play audio for this item">▶</button>
       </div>
 
-      <div class="activity">
+      <div class="activity" data-speech="Pub lunch at The Plough. Traditional Sunday roast, booking advised.">
         <div class="activity-icon">🍺</div>
         <div class="activity-content">
           <div class="activity-time">13:00 – 14:30</div>
           <div class="activity-desc">Pub lunch at <strong>“The Plough”</strong></div>
           <div class="activity-note">Traditional Sunday roast, booking advised.</div>
         </div>
-        <div class="activity-audio">
-          <audio controls>
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3" type="audio/mpeg">
-          </audio>
-        </div>
+        <button class="play-btn" aria-label="Play audio for this item">▶</button>
       </div>
 
-      <div class="activity">
+      <div class="activity" data-speech="Leck Beck and Fairy Steps. Woodland walk, limestone pavements and waterfall.">
         <div class="activity-icon">🚶</div>
         <div class="activity-content">
           <div class="activity-time">15:00 – 17:00</div>
           <div class="activity-desc">Leck Beck &amp; Fairy Steps</div>
           <div class="activity-note">Woodland walk, limestone pavements &amp; waterfall.</div>
         </div>
-        <div class="activity-audio">
-          <audio controls>
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3" type="audio/mpeg">
-          </audio>
-        </div>
+        <button class="play-btn" aria-label="Play audio for this item">▶</button>
       </div>
 
-      <div class="activity">
+      <div class="activity" data-speech="Afternoon tea at Farrer’s Tea Room. Scones, clotted cream and homemade jam.">
         <div class="activity-icon">🍰</div>
         <div class="activity-content">
           <div class="activity-time">17:15 – 18:00</div>
           <div class="activity-desc">Afternoon tea at <strong>“Farrer’s Tea Room”</strong></div>
           <div class="activity-note">Scones, clotted cream &amp; homemade jam.</div>
         </div>
-        <div class="activity-audio">
-          <audio controls>
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3" type="audio/mpeg">
-          </audio>
-        </div>
+        <button class="play-btn" aria-label="Play audio for this item">▶</button>
       </div>
 
-      <div class="activity">
+      <div class="activity" data-speech="Sunset at Top o’ th’ Hill. Panoramic view over the Howgill Fells.">
         <div class="activity-icon">🌅</div>
         <div class="activity-content">
           <div class="activity-time">18:30 – 19:30</div>
           <div class="activity-desc">Sunset at <strong>Top o’ th’ Hill</strong></div>
           <div class="activity-note">Panoramic view over the Howgill Fells.</div>
         </div>
-        <div class="activity-audio">
-          <audio controls>
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3" type="audio/mpeg">
-          </audio>
-        </div>
+        <button class="play-btn" aria-label="Play audio for this item">▶</button>
       </div>
 
       <div class="highlight-tip">🎒 Pack walking boots &amp; a raincoat – Cumbrian weather is part of the charm.</div>
     </div>
   </div>
 
-  <!-- extra info: Red Dragon + practicals -->
+  <!-- extra info: Red Dragon + weather -->
   <div class="extra-note">
     <p><span class="red-dragon-badge">🏨 The Red Dragon</span> · your cosy base in Kirkby Lonsdale</p>
     <p><span class="weather-tip">⛅ 26 Sept: 13°C · partly cloudy, chance of light rain.</span></p>
-  </div>
-
-  <!-- ambient audio (optional extra) -->
-  <div class="audio-wrapper">
-    <span>🎵 · Cumbrian ambience (background)</span>
-    <audio controls loop>
-      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
   </div>
 
   <footer>
     ✦ made for Karen & Steven · enjoy every moment in Kirkby Lonsdale ✦
   </footer>
 </div>
+
+<script>
+  (function() {
+    // Use the Web Speech API for text-to-speech
+    if (!('speechSynthesis' in window)) {
+      // If speech synthesis not supported, disable buttons or show alert? but we'll just silently ignore.
+      console.warn('Speech synthesis not supported');
+    }
+
+    const playButtons = document.querySelectorAll('.play-btn');
+
+    // Keep track of currently speaking utterance & button
+    let currentUtterance = null;
+    let currentButton = null;
+
+    function stopCurrentSpeech() {
+      if (window.speechSynthesis && window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+      }
+      if (currentButton) {
+        currentButton.textContent = '▶';
+        currentButton.classList.remove('playing');
+        currentButton = null;
+      }
+      currentUtterance = null;
+    }
+
+    playButtons.forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const activityDiv = this.closest('.activity');
+        if (!activityDiv) return;
+
+        // If this button is already playing, stop it
+        if (this.classList.contains('playing')) {
+          stopCurrentSpeech();
+          return;
+        }
+
+        // Stop any other speech first
+        stopCurrentSpeech();
+
+        // Get the text from data-speech attribute
+        const speechText = activityDiv.getAttribute('data-speech');
+        if (!speechText) {
+          console.warn('No data-speech attribute found');
+          return;
+        }
+
+        // Create utterance
+        const utterance = new SpeechSynthesisUtterance(speechText);
+        utterance.lang = 'en-GB';
+        utterance.rate = 0.95;
+        utterance.pitch = 1.0;
+
+        // Set current button and state
+        this.textContent = '⏹'; // stop icon
+        this.classList.add('playing');
+        currentButton = this;
+        currentUtterance = utterance;
+
+        // When speech ends, reset button
+        utterance.onend = function() {
+          if (currentButton) {
+            currentButton.textContent = '▶';
+            currentButton.classList.remove('playing');
+            currentButton = null;
+          }
+          currentUtterance = null;
+        };
+
+        utterance.onerror = function(event) {
+          // if error (e.g., cancelled), reset
+          if (currentButton) {
+            currentButton.textContent = '▶';
+            currentButton.classList.remove('playing');
+            currentButton = null;
+          }
+          currentUtterance = null;
+        };
+
+        // Speak
+        window.speechSynthesis.speak(utterance);
+      });
+    });
+
+    // Optional: if user clicks anywhere else, we don't stop; but we can stop on page unload
+    window.addEventListener('beforeunload', function() {
+      if (window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+    });
+
+    // Also stop if user clicks outside? we'll keep it simple: only stop via button.
+  })();
+</script>
+
 </body>
 </html>
