@@ -1,19 +1,35 @@
-# Karen & Steven's Trip
+# Karen & Steven's Trip 🌿
 
-A simple, mobile-friendly travel page for Karen and Steven.
+A mobile-friendly weekend itinerary for Karen and Steven, built as a simple GitHub Pages site.
 
-## Current trip
+## 📍 Current trip
 
 **Kirkby Lonsdale · 26–27 September**
 
-The itinerary is designed as a relaxed two-day escape, with walks, food, local sights and a stay at The Red Dragon.
+A relaxed Cumbrian escape with scenic walks, good food, local sights and a stay at **The Red Dragon**.
 
-## What's included
+## ✨ Features
 
-- Day-by-day itinerary
-- Timings and activity notes
-- Built-in audio narration for activities
-- Mobile-friendly layout
-- Easy access from GitHub Pages
+- 📅 Day-by-day itinerary
+- 🕘 Timings and activity notes
+- 🔊 Built-in audio narration
+- ⏳ Countdown to departure
+- 📱 Mobile-first responsive design
+- 🌐 Works directly from GitHub Pages
 
-Have a great trip! 🌿
+## 🗺️ Highlights
+
+- Ruskin's View & the River Lune
+- Kirkby Lonsdale town centre
+- Sizergh Castle & Gardens
+- Radstone & Casterton walk
+- Leck Beck & Fairy Steps
+- Sunset views over the Howgill Fells
+
+## 🚀 Site
+
+The itinerary is contained in `index.html` and is designed to work without a build step or server-side application.
+
+---
+
+**Karen & Steven · September 2026** ❤️
