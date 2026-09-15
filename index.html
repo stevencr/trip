@@ -4,575 +4,126 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kirkby Lonsdale · Karen & Steven · 26 Sept</title>
-  <!-- Google Font & reset -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f4efe6;
-      color: #2d3e3f;
-      line-height: 1.5;
-      padding: 2rem 1rem;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .container {
-      max-width: 1100px;
-      width: 100%;
-      background: rgba(255, 250, 242, 0.7);
-      backdrop-filter: blur(2px);
-      border-radius: 2.5rem;
-      padding: 2rem 2rem 2.5rem;
-      box-shadow: 0 20px 40px -12px rgba(40, 50, 40, 0.25);
-      border: 1px solid #e6dfd4;
-    }
-
-    /* header */
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 2rem;
-      border-bottom: 2px dashed #c9b9a8;
-      padding-bottom: 1.2rem;
-    }
-
-    .hero h1 {
-      font-size: 2.6rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: #2a4b4a;
-      line-height: 1.1;
-    }
-    .hero h1 small {
-      font-weight: 400;
-      font-size: 1rem;
-      color: #5e6f6b;
-      display: block;
-      margin-top: 0.2rem;
-      letter-spacing: 0.3px;
-    }
-    .hero .date-badge {
-      background: #4b6b5e;
-      color: #f4efe6;
-      padding: 0.4rem 1.2rem;
-      border-radius: 40px;
-      font-weight: 500;
-      font-size: 1.2rem;
-      box-shadow: inset 0 -2px 0 #2d423b;
-      white-space: nowrap;
-      margin-bottom: 0.2rem;
-    }
-
-    .for-karen-steven {
-      font-size: 1.1rem;
-      background: #e7dfd3;
-      display: inline-block;
-      padding: 0.2rem 1.2rem;
-      border-radius: 30px;
-      color: #2b4744;
-      font-weight: 500;
-      margin-top: 0.4rem;
-    }
-    .for-karen-steven strong {
-      color: #8f2e2e;
-      font-weight: 600;
-    }
-
-    /* days grid */
-    .days-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.8rem;
-      margin: 2rem 0 1.8rem;
-    }
-
-    @media (max-width: 680px) {
-      .days-grid {
-        grid-template-columns: 1fr;
-        gap: 2.2rem;
-      }
-      .hero {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.6rem;
-      }
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-      .container {
-        padding: 1.5rem;
-      }
-    }
-
-    .day-card {
-      background: #fcf9f3;
-      border-radius: 2rem;
-      padding: 1.8rem 1.6rem 1.8rem;
-      box-shadow: 0 8px 18px -8px rgba(60, 70, 60, 0.12);
-      border: 1px solid #ddd6c8;
-      transition: 0.2s;
-    }
-    .day-card:hover {
-      transform: translateY(-4px);
-      border-color: #b9ad99;
-    }
-
-    .day-title {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: #31504b;
-      letter-spacing: -0.3px;
-      margin-bottom: 1.2rem;
-      border-bottom: 1px solid #dacebd;
-      padding-bottom: 0.7rem;
-    }
-    .day-title span {
-      background: #4b6b5e;
-      color: #f6f0e5;
-      font-size: 1rem;
-      padding: 0.2rem 0.8rem;
-      border-radius: 30px;
-      font-weight: 500;
-      margin-left: 0.2rem;
-    }
-
-    /* activity row – each with a play button (audio icon) */
-    .activity {
-      display: flex;
-      gap: 0.7rem;
-      margin-bottom: 1rem;
-      align-items: center;
-      background: #faf7f1;
-      padding: 0.5rem 0.6rem 0.5rem 0.8rem;
-      border-radius: 1.5rem;
-      border: 1px solid #e6ddd0;
-      transition: 0.1s ease;
-      flex-wrap: wrap;
-    }
-    .activity:hover {
-      background: #f6f0e6;
-      border-color: #c7bbaa;
-    }
-
-    .activity-icon {
-      font-size: 1.4rem;
-      min-width: 1.8rem;
-      text-align: center;
-    }
-    .activity-content {
-      flex: 1;
-      min-width: 140px;
-    }
-    .activity-time {
-      font-weight: 600;
-      color: #4b625a;
-      font-size: 0.75rem;
-      letter-spacing: 0.3px;
-      background: #ece4d8;
-      display: inline-block;
-      padding: 0.05rem 0.7rem;
-      border-radius: 16px;
-      margin-bottom: 0.1rem;
-    }
-    .activity-desc {
-      font-weight: 500;
-      color: #1d3330;
-      font-size: 1rem;
-    }
-    .activity-desc strong {
-      font-weight: 600;
-      color: #1e3d38;
-    }
-    .activity-note {
-      font-weight: 400;
-      color: #526b62;
-      font-size: 0.85rem;
-      display: block;
-      margin-top: 0.05rem;
-    }
-
-    /* play button – just a play icon, triggers speech */
-    .play-btn {
-      background: #4b6b5e;
-      border: none;
-      color: white;
-      font-size: 1.1rem;
-      width: 2.2rem;
-      height: 2.2rem;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: 0.15s;
-      box-shadow: 0 2px 6px rgba(40, 50, 40, 0.2);
-      flex-shrink: 0;
-      border: 1px solid #3a5a4d;
-    }
-    .play-btn:hover {
-      background: #2d4f41;
-      transform: scale(1.05);
-    }
-    .play-btn:active {
-      transform: scale(0.95);
-    }
-    .play-btn.playing {
-      background: #9e7e5e;
-      border-color: #7d6248;
-    }
-
-    .highlight-tip {
-      background: #e6ede5;
-      border-radius: 20px;
-      padding: 0.4rem 1rem;
-      margin: 0.8rem 0 0.2rem;
-      font-size: 0.85rem;
-      display: inline-block;
-      color: #25433d;
-      border-left: 4px solid #788f80;
-    }
-
-    .extra-note {
-      margin-top: 1.5rem;
-      background: #ede7db;
-      border-radius: 2rem;
-      padding: 1.2rem 1.8rem;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      border: 1px solid #d3c9b8;
-    }
-    .extra-note p {
-      font-weight: 400;
-      color: #334b44;
-    }
-    .extra-note strong {
-      font-weight: 600;
-      color: #1c3530;
-    }
-    .red-dragon-badge {
-      background: #8f2e2e;
-      color: #f6ede4;
-      padding: 0.2rem 1.2rem;
-      border-radius: 40px;
-      font-weight: 500;
-      font-size: 0.9rem;
-      letter-spacing: 0.5px;
-      border: 1px solid #a84343;
-    }
-    .weather-tip {
-      background: #d8e0d3;
-      border-radius: 30px;
-      padding: 0.2rem 1.4rem;
-      font-size: 0.9rem;
-      color: #1f3a33;
-    }
-
-    footer {
-      margin-top: 1.5rem;
-      font-size: 0.9rem;
-      color: #6e7d74;
-      text-align: center;
-      border-top: 1px solid #dad1c2;
-      padding-top: 1.2rem;
-      width: 100%;
-    }
-
-    /* small screen adjustments */
-    @media (max-width: 480px) {
-      .activity {
-        padding: 0.5rem 0.4rem;
-      }
-      .play-btn {
-        width: 2rem;
-        height: 2rem;
-        font-size: 1rem;
-      }
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #f4efe6; color: #2d3e3f; line-height: 1.5; padding: 2rem 1rem; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+    .container { max-width: 1100px; width: 100%; background: rgba(255,250,242,.7); backdrop-filter: blur(2px); border-radius: 2.5rem; padding: 2rem 2rem 2.5rem; box-shadow: 0 20px 40px -12px rgba(40,50,40,.25); border: 1px solid #e6dfd4; }
+    .hero { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; border-bottom: 2px dashed #c9b9a8; padding-bottom: 1.2rem; }
+    .hero h1 { font-size: 2.6rem; font-weight: 600; letter-spacing: -.02em; color: #2a4b4a; line-height: 1.1; }
+    .hero h1 small { font-weight: 400; font-size: 1rem; color: #5e6f6b; display: block; margin-top: .2rem; letter-spacing: .3px; }
+    .hero .date-badge { background: #4b6b5e; color: #f4efe6; padding: .4rem 1.2rem; border-radius: 40px; font-weight: 500; font-size: 1.2rem; box-shadow: inset 0 -2px 0 #2d423b; white-space: nowrap; margin-bottom: .2rem; }
+    .for-karen-steven { font-size: 1.1rem; background: #e7dfd3; display: inline-block; padding: .2rem 1.2rem; border-radius: 30px; color: #2b4744; font-weight: 500; margin-top: .4rem; }
+    .for-karen-steven strong { color: #8f2e2e; font-weight: 600; }
+    .countdown { background: #2d4f41; color: #fffaf2; border-radius: 1.8rem; padding: 1.2rem 1.4rem; margin: 0 0 2rem; text-align: center; box-shadow: 0 8px 18px -8px rgba(40,50,40,.3); }
+    .countdown-label { font-size: .85rem; text-transform: uppercase; letter-spacing: 1.5px; opacity: .85; }
+    #countdown { font-size: clamp(1.8rem, 6vw, 3.2rem); font-weight: 600; letter-spacing: .04em; margin-top: .15rem; }
+    .countdown.done { background: #8f2e2e; }
+    .days-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; margin: 2rem 0 1.8rem; }
+    .day-card { background: #fcf9f3; border-radius: 2rem; padding: 1.8rem 1.6rem; box-shadow: 0 8px 18px -8px rgba(60,70,60,.12); border: 1px solid #ddd6c8; }
+    .day-title { display: flex; align-items: center; gap: .6rem; font-size: 1.8rem; font-weight: 600; color: #31504b; margin-bottom: 1.2rem; border-bottom: 1px solid #dacebd; padding-bottom: .7rem; }
+    .day-title span { background: #4b6b5e; color: #f6f0e5; font-size: 1rem; padding: .2rem .8rem; border-radius: 30px; font-weight: 500; }
+    .activity { display: flex; gap: .7rem; margin-bottom: 1rem; align-items: center; background: #faf7f1; padding: .5rem .6rem .5rem .8rem; border-radius: 1.5rem; border: 1px solid #e6ddd0; flex-wrap: wrap; }
+    .activity-icon { font-size: 1.4rem; min-width: 1.8rem; text-align: center; }
+    .activity-content { flex: 1; min-width: 140px; }
+    .activity-time { font-weight: 600; color: #4b625a; font-size: .75rem; background: #ece4d8; display: inline-block; padding: .05rem .7rem; border-radius: 16px; }
+    .activity-desc { font-weight: 500; color: #1d3330; font-size: 1rem; }
+    .activity-desc strong { font-weight: 600; color: #1e3d38; }
+    .activity-note { color: #526b62; font-size: .85rem; display: block; }
+    .play-btn { background: #4b6b5e; border: 1px solid #3a5a4d; color: white; font-size: 1.1rem; width: 2.2rem; height: 2.2rem; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; }
+    .play-btn.playing { background: #9e7e5e; border-color: #7d6248; }
+    .highlight-tip { background: #e6ede5; border-radius: 20px; padding: .4rem 1rem; margin: .8rem 0 .2rem; font-size: .85rem; display: inline-block; color: #25433d; border-left: 4px solid #788f80; }
+    .extra-note { margin-top: 1.5rem; background: #ede7db; border-radius: 2rem; padding: 1.2rem 1.8rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; border: 1px solid #d3c9b8; }
+    .red-dragon-badge { background: #8f2e2e; color: #f6ede4; padding: .2rem 1.2rem; border-radius: 40px; font-weight: 500; font-size: .9rem; }
+    .weather-tip { background: #d8e0d3; border-radius: 30px; padding: .2rem 1.4rem; font-size: .9rem; color: #1f3a33; }
+    footer { margin-top: 1.5rem; font-size: .9rem; color: #6e7d74; text-align: center; border-top: 1px solid #dad1c2; padding-top: 1.2rem; width: 100%; }
+    @media (max-width: 680px) { .days-grid { grid-template-columns: 1fr; gap: 2.2rem; } .hero { flex-direction: column; align-items: flex-start; gap: .6rem; } .hero h1 { font-size: 2.2rem; } .container { padding: 1.5rem; } }
   </style>
 </head>
 <body>
 <div class="container">
-
-  <!-- header with Red Dragon -->
   <div class="hero">
     <div>
-      <h1>
-        Kirkby Lonsdale
-        <small>a two‑day escape · 26 September</small>
-      </h1>
+      <h1>Kirkby Lonsdale<small>a two-day escape · 26 September</small></h1>
       <div class="for-karen-steven">✨ for Karen &amp; Steven · staying at <strong>The Red Dragon</strong></div>
     </div>
-    <div class="date-badge">
-      📅 26–27 Sept
-    </div>
+    <div class="date-badge">📅 26–27 Sept</div>
   </div>
 
-  <!-- days grid -->
+  <div class="countdown" id="countdownBox">
+    <div class="countdown-label">Countdown to 9:00am · Friday 26 September</div>
+    <div id="countdown">Loading…</div>
+  </div>
+
   <div class="days-grid">
-    <!-- DAY 1 -->
     <div class="day-card">
-      <div class="day-title">
-        <span>①</span> Day 1 · 26 Sept
-      </div>
-
-      <!-- each activity has a play button that reads the description + note -->
-      <div class="activity" data-speech="Arrival and breakfast at The Orange Tree. Cosy café, Cumbrian breakfast and homemade scones.">
-        <div class="activity-icon">☕</div>
-        <div class="activity-content">
-          <div class="activity-time">09:00 – 10:30</div>
-          <div class="activity-desc">Arrival &amp; breakfast at <strong>“The Orange Tree”</strong></div>
-          <div class="activity-note">Cosy café, Cumbrian breakfast &amp; homemade scones.</div>
-        </div>
-        <button class="play-btn" aria-label="Play audio for this item">▶</button>
-      </div>
-
-      <div class="activity" data-speech="Ruskin’s View and River Lune wander. Iconic view, walk along the riverbank, spot herons.">
-        <div class="activity-icon">🌳</div>
-        <div class="activity-content">
-          <div class="activity-time">10:45 – 12:30</div>
-          <div class="activity-desc">Ruskin’s View &amp; River Lune wander</div>
-          <div class="activity-note">Iconic view, walk along the riverbank, spot herons.</div>
-        </div>
-        <button class="play-btn" aria-label="Play audio for this item">▶</button>
-      </div>
-
-      <div class="activity" data-speech="Kirkby Lonsdale market town stroll. Independent shops, antiques and the old Market Cross.">
-        <div class="activity-icon">🛍️</div>
-        <div class="activity-content">
-          <div class="activity-time">12:45 – 13:45</div>
-          <div class="activity-desc">Kirkby Lonsdale market town stroll</div>
-          <div class="activity-note">Independent shops, antiques &amp; the old Market Cross.</div>
-        </div>
-        <button class="play-btn" aria-label="Play audio for this item">▶</button>
-      </div>
-
-      <div class="activity" data-speech="Lunch at Lunesdale Deli. Local cheeses, artisan sandwiches and Cumbrian ale.">
-        <div class="activity-icon">🍽️</div>
-        <div class="activity-content">
-          <div class="activity-time">14:00 – 15:30</div>
-          <div class="activity-desc">Lunch at <strong>“Lunesdale Deli”</strong></div>
-          <div class="activity-note">Local cheeses, artisan sandwiches &amp; Cumbrian ale.</div>
-        </div>
-        <button class="play-btn" aria-label="Play audio for this item">▶</button>
-      </div>
-
-      <div class="activity" data-speech="Sizergh Castle and Gardens, National Trust. Ten minute drive. Medieval tower, lake views and borders.">
-        <div class="activity-icon">🏰</div>
-        <div class="activity-content">
-          <div class="activity-time">15:45 – 17:30</div>
-          <div class="activity-desc">Sizergh Castle &amp; Gardens (National Trust)</div>
-          <div class="activity-note">10 min drive. Medieval tower, lake views &amp; borders.</div>
-        </div>
-        <button class="play-btn" aria-label="Play audio for this item">▶</button>
-      </div>
-
-      <div class="activity" data-speech="Dinner at The Royal Barn. Seasonal British menu, book a window table.">
-        <div class="activity-icon">🍷</div>
-        <div class="activity-content">
-          <div class="activity-time">19:00 – late</div>
-          <div class="activity-desc">Dinner at <strong>“The Royal Barn”</strong></div>
-          <div class="activity-note">Seasonal British menu, book a window table.</div>
-        </div>
-        <button class="play-btn" aria-label="Play audio for this item">▶</button>
-      </div>
-
+      <div class="day-title"><span>①</span> Day 1 · 26 Sept</div>
+      <div class="activity" data-speech="Arrival and breakfast at The Orange Tree. Cosy café, Cumbrian breakfast and homemade scones."><div class="activity-icon">☕</div><div class="activity-content"><div class="activity-time">09:00 – 10:30</div><div class="activity-desc">Arrival &amp; breakfast at <strong>“The Orange Tree”</strong></div><div class="activity-note">Cosy café, Cumbrian breakfast &amp; homemade scones.</div></div><button class="play-btn">▶</button></div>
+      <div class="activity" data-speech="Ruskin’s View and River Lune wander. Iconic view, walk along the riverbank, spot herons."><div class="activity-icon">🌳</div><div class="activity-content"><div class="activity-time">10:45 – 12:30</div><div class="activity-desc">Ruskin’s View &amp; River Lune wander</div><div class="activity-note">Iconic view, walk along the riverbank, spot herons.</div></div><button class="play-btn">▶</button></div>
+      <div class="activity" data-speech="Kirkby Lonsdale market town stroll. Independent shops, antiques and the old Market Cross."><div class="activity-icon">🛍️</div><div class="activity-content"><div class="activity-time">12:45 – 13:45</div><div class="activity-desc">Kirkby Lonsdale market town stroll</div><div class="activity-note">Independent shops, antiques &amp; the old Market Cross.</div></div><button class="play-btn">▶</button></div>
+      <div class="activity" data-speech="Lunch at Lunesdale Deli. Local cheeses, artisan sandwiches and Cumbrian ale."><div class="activity-icon">🍽️</div><div class="activity-content"><div class="activity-time">14:00 – 15:30</div><div class="activity-desc">Lunch at <strong>“Lunesdale Deli”</strong></div><div class="activity-note">Local cheeses, artisan sandwiches &amp; Cumbrian ale.</div></div><button class="play-btn">▶</button></div>
+      <div class="activity" data-speech="Sizergh Castle and Gardens, National Trust. Ten minute drive. Medieval tower, lake views and borders."><div class="activity-icon">🏰</div><div class="activity-content"><div class="activity-time">15:45 – 17:30</div><div class="activity-desc">Sizergh Castle &amp; Gardens (National Trust)</div><div class="activity-note">10 min drive. Medieval tower, lake views &amp; borders.</div></div><button class="play-btn">▶</button></div>
+      <div class="activity" data-speech="Dinner at The Royal Barn. Seasonal British menu, book a window table."><div class="activity-icon">🍷</div><div class="activity-content"><div class="activity-time">19:00 – late</div><div class="activity-desc">Dinner at <strong>“The Royal Barn”</strong></div><div class="activity-note">Seasonal British menu, book a window table.</div></div><button class="play-btn">▶</button></div>
       <div class="highlight-tip">🌟 Evening stroll to Devil’s Bridge – atmospheric under moonlight.</div>
     </div>
-
-    <!-- DAY 2 -->
     <div class="day-card">
-      <div class="day-title">
-        <span>②</span> Day 2 · 27 Sept
-      </div>
-
-      <div class="activity" data-speech="Leisurely breakfast at The Cobbles. Famous sticky buns and locally roasted coffee.">
-        <div class="activity-icon">🥐</div>
-        <div class="activity-content">
-          <div class="activity-time">08:30 – 09:30</div>
-          <div class="activity-desc">Leisurely breakfast at <strong>“The Cobbles”</strong></div>
-          <div class="activity-note">Famous sticky buns &amp; locally roasted coffee.</div>
-        </div>
-        <button class="play-btn" aria-label="Play audio for this item">▶</button>
-      </div>
-
-      <div class="activity" data-speech="Walk to Radstone and Casterton circular. Moderate 4 mile loop, panoramic Lune Valley views.">
-        <div class="activity-icon">⛰️</div>
-        <div class="activity-content">
-          <div class="activity-time">10:00 – 12:30</div>
-          <div class="activity-desc">Walk to <strong>Radstone &amp; Casterton</strong> circular</div>
-          <div class="activity-note">Moderate 4‑mile loop, panoramic Lune Valley views.</div>
-        </div>
-        <button class="play-btn" aria-label="Play audio for this item">▶</button>
-      </div>
-
-      <div class="activity" data-speech="Pub lunch at The Plough. Traditional Sunday roast, booking advised.">
-        <div class="activity-icon">🍺</div>
-        <div class="activity-content">
-          <div class="activity-time">13:00 – 14:30</div>
-          <div class="activity-desc">Pub lunch at <strong>“The Plough”</strong></div>
-          <div class="activity-note">Traditional Sunday roast, booking advised.</div>
-        </div>
-        <button class="play-btn" aria-label="Play audio for this item">▶</button>
-      </div>
-
-      <div class="activity" data-speech="Leck Beck and Fairy Steps. Woodland walk, limestone pavements and waterfall.">
-        <div class="activity-icon">🚶</div>
-        <div class="activity-content">
-          <div class="activity-time">15:00 – 17:00</div>
-          <div class="activity-desc">Leck Beck &amp; Fairy Steps</div>
-          <div class="activity-note">Woodland walk, limestone pavements &amp; waterfall.</div>
-        </div>
-        <button class="play-btn" aria-label="Play audio for this item">▶</button>
-      </div>
-
-      <div class="activity" data-speech="Afternoon tea at Farrer’s Tea Room. Scones, clotted cream and homemade jam.">
-        <div class="activity-icon">🍰</div>
-        <div class="activity-content">
-          <div class="activity-time">17:15 – 18:00</div>
-          <div class="activity-desc">Afternoon tea at <strong>“Farrer’s Tea Room”</strong></div>
-          <div class="activity-note">Scones, clotted cream &amp; homemade jam.</div>
-        </div>
-        <button class="play-btn" aria-label="Play audio for this item">▶</button>
-      </div>
-
-      <div class="activity" data-speech="Sunset at Top o’ th’ Hill. Panoramic view over the Howgill Fells.">
-        <div class="activity-icon">🌅</div>
-        <div class="activity-content">
-          <div class="activity-time">18:30 – 19:30</div>
-          <div class="activity-desc">Sunset at <strong>Top o’ th’ Hill</strong></div>
-          <div class="activity-note">Panoramic view over the Howgill Fells.</div>
-        </div>
-        <button class="play-btn" aria-label="Play audio for this item">▶</button>
-      </div>
-
+      <div class="day-title"><span>②</span> Day 2 · 27 Sept</div>
+      <div class="activity" data-speech="Leisurely breakfast at The Cobbles. Famous sticky buns and locally roasted coffee."><div class="activity-icon">🥐</div><div class="activity-content"><div class="activity-time">08:30 – 09:30</div><div class="activity-desc">Leisurely breakfast at <strong>“The Cobbles”</strong></div><div class="activity-note">Famous sticky buns &amp; locally roasted coffee.</div></div><button class="play-btn">▶</button></div>
+      <div class="activity" data-speech="Walk to Radstone and Casterton circular. Moderate 4 mile loop, panoramic Lune Valley views."><div class="activity-icon">⛰️</div><div class="activity-content"><div class="activity-time">10:00 – 12:30</div><div class="activity-desc">Walk to <strong>Radstone &amp; Casterton</strong> circular</div><div class="activity-note">Moderate 4-mile loop, panoramic Lune Valley views.</div></div><button class="play-btn">▶</button></div>
+      <div class="activity" data-speech="Pub lunch at The Plough. Traditional Sunday roast, booking advised."><div class="activity-icon">🍺</div><div class="activity-content"><div class="activity-time">13:00 – 14:30</div><div class="activity-desc">Pub lunch at <strong>“The Plough”</strong></div><div class="activity-note">Traditional Sunday roast, booking advised.</div></div><button class="play-btn">▶</button></div>
+      <div class="activity" data-speech="Leck Beck and Fairy Steps. Woodland walk, limestone pavements and waterfall."><div class="activity-icon">🚶</div><div class="activity-content"><div class="activity-time">15:00 – 17:00</div><div class="activity-desc">Leck Beck &amp; Fairy Steps</div><div class="activity-note">Woodland walk, limestone pavements &amp; waterfall.</div></div><button class="play-btn">▶</button></div>
+      <div class="activity" data-speech="Afternoon tea at Farrer’s Tea Room. Scones, clotted cream and homemade jam."><div class="activity-icon">🍰</div><div class="activity-content"><div class="activity-time">17:15 – 18:00</div><div class="activity-desc">Afternoon tea at <strong>“Farrer’s Tea Room”</strong></div><div class="activity-note">Scones, clotted cream &amp; homemade jam.</div></div><button class="play-btn">▶</button></div>
+      <div class="activity" data-speech="Sunset at Top o’ th’ Hill. Panoramic view over the Howgill Fells."><div class="activity-icon">🌅</div><div class="activity-content"><div class="activity-time">18:30 – 19:30</div><div class="activity-desc">Sunset at <strong>Top o’ th’ Hill</strong></div><div class="activity-note">Panoramic view over the Howgill Fells.</div></div><button class="play-btn">▶</button></div>
       <div class="highlight-tip">🎒 Pack walking boots &amp; a raincoat – Cumbrian weather is part of the charm.</div>
     </div>
   </div>
 
-  <!-- extra info: Red Dragon + weather -->
-  <div class="extra-note">
-    <p><span class="red-dragon-badge">🏨 The Red Dragon</span> · your cosy base in Kirkby Lonsdale</p>
-    <p><span class="weather-tip">⛅ 26 Sept: 13°C · partly cloudy, chance of light rain.</span></p>
-  </div>
-
-  <footer>
-    ✦ made for Karen & Steven · enjoy every moment in Kirkby Lonsdale ✦
-  </footer>
+  <div class="extra-note"><p><span class="red-dragon-badge">🏨 The Red Dragon</span> · your cosy base in Kirkby Lonsdale</p><p><span class="weather-tip">⛅ 26 Sept: 13°C · partly cloudy, chance of light rain.</span></p></div>
+  <footer>✦ made for Karen &amp; Steven · enjoy every moment in Kirkby Lonsdale ✦</footer>
 </div>
-
 <script>
-  (function() {
-    // Use the Web Speech API for text-to-speech
-    if (!('speechSynthesis' in window)) {
-      // If speech synthesis not supported, disable buttons or show alert? but we'll just silently ignore.
-      console.warn('Speech synthesis not supported');
+(function() {
+  const target = new Date('2026-09-26T09:00:00+01:00').getTime();
+  const display = document.getElementById('countdown');
+  const box = document.getElementById('countdownBox');
+  function updateCountdown() {
+    const remaining = target - Date.now();
+    if (remaining <= 0) {
+      display.textContent = '🎉 It’s time — have a fantastic trip!';
+      box.classList.add('done');
+      return;
     }
+    const days = Math.floor(remaining / 86400000);
+    const hours = Math.floor((remaining % 86400000) / 3600000);
+    const minutes = Math.floor((remaining % 3600000) / 60000);
+    const seconds = Math.floor((remaining % 60000) / 1000);
+    display.textContent = `${days}d ${String(hours).padStart(2,'0')}h ${String(minutes).padStart(2,'0')}m ${String(seconds).padStart(2,'0')}s`;
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
 
-    const playButtons = document.querySelectorAll('.play-btn');
-
-    // Keep track of currently speaking utterance & button
-    let currentUtterance = null;
-    let currentButton = null;
-
-    function stopCurrentSpeech() {
-      if (window.speechSynthesis && window.speechSynthesis.speaking) {
-        window.speechSynthesis.cancel();
-      }
-      if (currentButton) {
-        currentButton.textContent = '▶';
-        currentButton.classList.remove('playing');
-        currentButton = null;
-      }
-      currentUtterance = null;
-    }
-
-    playButtons.forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        const activityDiv = this.closest('.activity');
-        if (!activityDiv) return;
-
-        // If this button is already playing, stop it
-        if (this.classList.contains('playing')) {
-          stopCurrentSpeech();
-          return;
-        }
-
-        // Stop any other speech first
-        stopCurrentSpeech();
-
-        // Get the text from data-speech attribute
-        const speechText = activityDiv.getAttribute('data-speech');
-        if (!speechText) {
-          console.warn('No data-speech attribute found');
-          return;
-        }
-
-        // Create utterance
-        const utterance = new SpeechSynthesisUtterance(speechText);
-        utterance.lang = 'en-GB';
-        utterance.rate = 0.95;
-        utterance.pitch = 1.0;
-
-        // Set current button and state
-        this.textContent = '⏹'; // stop icon
-        this.classList.add('playing');
-        currentButton = this;
-        currentUtterance = utterance;
-
-        // When speech ends, reset button
-        utterance.onend = function() {
-          if (currentButton) {
-            currentButton.textContent = '▶';
-            currentButton.classList.remove('playing');
-            currentButton = null;
-          }
-          currentUtterance = null;
-        };
-
-        utterance.onerror = function(event) {
-          // if error (e.g., cancelled), reset
-          if (currentButton) {
-            currentButton.textContent = '▶';
-            currentButton.classList.remove('playing');
-            currentButton = null;
-          }
-          currentUtterance = null;
-        };
-
-        // Speak
-        window.speechSynthesis.speak(utterance);
-      });
-    });
-
-    // Optional: if user clicks anywhere else, we don't stop; but we can stop on page unload
-    window.addEventListener('beforeunload', function() {
-      if (window.speechSynthesis) {
-        window.speechSynthesis.cancel();
-      }
-    });
-
-    // Also stop if user clicks outside? we'll keep it simple: only stop via button.
-  })();
+  if (!('speechSynthesis' in window)) return;
+  const buttons = document.querySelectorAll('.play-btn');
+  let currentButton = null;
+  function stop() {
+    window.speechSynthesis.cancel();
+    if (currentButton) { currentButton.textContent = '▶'; currentButton.classList.remove('playing'); currentButton = null; }
+  }
+  buttons.forEach(btn => btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (this.classList.contains('playing')) { stop(); return; }
+    stop();
+    const text = this.closest('.activity')?.dataset.speech;
+    if (!text) return;
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-GB'; utterance.rate = .95; utterance.pitch = 1;
+    this.textContent = '⏹'; this.classList.add('playing'); currentButton = this;
+    utterance.onend = stop; utterance.onerror = stop;
+    window.speechSynthesis.speak(utterance);
+  }));
+})();
 </script>
-
 </body>
 </html>
