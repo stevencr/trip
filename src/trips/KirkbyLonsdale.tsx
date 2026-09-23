@@ -10,7 +10,6 @@ const days=[
     intro:'Arrival, food, riverside walking and a castle.',
     tip:'🌙 Evening idea · Stroll to Devil’s Bridge under the moonlight.',
     items:[
-      {time:'09:00 – 10:30',title:'Arrival & breakfast at The Orange Tree',description:'Cosy café, Cumbrian breakfast & homemade scones.',icon:'☕',speech:'Arrival and breakfast at The Orange Tree. Cosy café, Cumbrian breakfast and homemade scones.'},
       {time:'10:45 – 12:30',title:'Ruskin’s View & River Lune wander',description:'Iconic view, riverbank walk & heron spotting.',icon:'🌳',speech:'Ruskin’s View and River Lune wander. Iconic view, walk along the riverbank, spot herons.'},
       {time:'12:45 – 13:45',title:'Kirkby Lonsdale town stroll',description:'Independent shops, antiques & the old Market Cross.',icon:'🛍️',speech:'Kirkby Lonsdale market town stroll. Independent shops, antiques and the old Market Cross.'},
       {time:'14:00 – 15:30',title:'Lunch at Lunesdale Deli',description:'Local cheeses, artisan sandwiches & Cumbrian ale.',icon:'🍽️',speech:'Lunch at Lunesdale Deli. Local cheeses, artisan sandwiches and Cumbrian ale.'},
