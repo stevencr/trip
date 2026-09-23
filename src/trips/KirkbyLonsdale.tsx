@@ -14,7 +14,8 @@ const days=[
       {time:'12:45 – 13:45',title:'Kirkby Lonsdale town stroll',description:'Independent shops, antiques & the old Market Cross.',icon:'🛍️',speech:'Kirkby Lonsdale market town stroll. Independent shops, antiques and the old Market Cross.'},
       {time:'14:00 – 15:30',title:'Lunch at Lunesdale Deli',description:'Local cheeses, artisan sandwiches & Cumbrian ale.',icon:'🍽️',speech:'Lunch at Lunesdale Deli. Local cheeses, artisan sandwiches and Cumbrian ale.'},
       {time:'15:45 – 17:30',title:'Sizergh Castle & Gardens',description:'10 min drive · medieval tower, lake views & gardens.',icon:'🏰',speech:'Sizergh Castle and Gardens, National Trust. Ten minute drive. Medieval tower, lake views and borders.'},
-      {time:'19:00 – late',title:'Dinner at The Royal Barn',description:'Seasonal British menu · book a window table.',icon:'🍷',speech:'Dinner at The Royal Barn. Seasonal British menu, book a window table.'}
+      {time:'19:00 – late',title:'Dinner at The Royal Barn',description:'Seasonal British menu · book a window table.',icon:'🍷',speech:'Dinner at The Royal Barn. Seasonal British menu, book a window table.'},
+      {time:'After dinner',title:'Saturday night pub options',description:'Pick a few for a relaxed wander: The Snooty Fox, The Sun Inn, Kings Arms, Plato’s or finish with a drink at The Red Dragon.',icon:'🍻',speech:'Saturday night pub options. Try The Snooty Fox, The Sun Inn, Kings Arms, Plato’s, or finish with a drink at The Red Dragon.'}
     ]
   },
   {
