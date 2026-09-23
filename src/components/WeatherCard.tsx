@@ -1,0 +1,2 @@
+type Props={forecast:string;checked:string};
+export function WeatherCard({forecast,checked}:Props){return <div className="info-bar"><div><strong>⛅ Weather forecast</strong>{forecast}<small>Forecast checked {checked}</small></div></div>}
