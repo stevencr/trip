@@ -4,7 +4,7 @@ import type {ReactNode} from 'react';
 export type DayTab<T> = {
   id:string;
   label:string;
-  content:T;
+  data:T;
 };
 
 type Props<T> = {
@@ -29,6 +29,6 @@ export function DayTabs<T>({days,render}:Props<T>){
         </button>
       ))}
     </nav>
-    {render(day.content)}
+    {render(day.data)}
   </>;
 }
