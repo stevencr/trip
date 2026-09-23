@@ -16,7 +16,7 @@ const days=[
       {time:'14:00 – 15:30',title:'Lunch at Lunesdale Deli',description:'Local cheeses, artisan sandwiches & Cumbrian ale.',icon:'🍽️',speech:'Lunch at Lunesdale Deli. Local cheeses, artisan sandwiches and Cumbrian ale.'},
       {time:'15:45 – 17:30',title:'Sizergh Castle & Gardens',description:'10 min drive · medieval tower, lake views & gardens.',icon:'🏰',speech:'Sizergh Castle and Gardens, National Trust. Ten minute drive. Medieval tower, lake views and borders.'},
       {time:'19:00 – late',title:'Dinner at The Royal Barn',description:'Seasonal British menu · book a window table.',icon:'🍷',speech:'Dinner at The Royal Barn. Seasonal British menu, book a window table.'}
-    ] satisfies DayTab[]
+    ]
   },
   {
     id:'sun',
@@ -32,9 +32,9 @@ const days=[
       {time:'15:00 – 17:00',title:'Leck Beck & Fairy Steps',description:'Woodland, limestone pavements & waterfall.',icon:'🚶',speech:'Leck Beck and Fairy Steps. Woodland walk, limestone pavements and waterfall.'},
       {time:'17:15 – 18:00',title:'Tea at Farrer’s Tea Room',description:'Scones, clotted cream & homemade jam.',icon:'🍰',speech:'Afternoon tea at Farrer’s Tea Room. Scones, clotted cream and homemade jam.'},
       {time:'18:30 – 19:30',title:'Sunset at Top o’ th’ Hill',description:'Panoramic views over the Howgill Fells.',icon:'🌅',speech:'Sunset at Top o’ th’ Hill. Panoramic view over the Howgill Fells.'}
-    ] satisfies Item[]
+    ]
   }
-];
+] satisfies DayTab[];
 
 export function KirkbyLonsdale(){
   return <section className="trip-page">
