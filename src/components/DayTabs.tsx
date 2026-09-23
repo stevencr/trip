@@ -1,18 +1,22 @@
 import {useState} from 'react';
 import type {ReactNode} from 'react';
+import type {Item} from './Timeline';
 
-export type DayTab<T> = {
+export type DayTab = {
   id:string;
   label:string;
-  data:T;
+  date:string;
+  title:string;
+  intro:string;
+  items:Item[];
 };
 
-type Props<T> = {
-  days:DayTab<T>[];
-  render:(day:T)=>ReactNode;
+type Props = {
+  days:DayTab[];
+  render:(day:DayTab)=>ReactNode;
 };
 
-export function DayTabs<T>({days,render}:Props<T>){
+export function DayTabs({days,render}:Props){
   const [active,setActive]=useState(days[0].id);
   const day=days.find(item=>item.id===active) ?? days[0];
 
@@ -29,6 +33,6 @@ export function DayTabs<T>({days,render}:Props<T>){
         </button>
       ))}
     </nav>
-    {render(day.data)}
+    {render(day)}
   </>;
 }
