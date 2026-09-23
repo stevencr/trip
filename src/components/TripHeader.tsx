@@ -1,0 +1,2 @@
+type Props={eyebrow:string;title:string;subtitle:string;pill?:string};
+export function TripHeader({eyebrow,title,subtitle,pill}:Props){return <header className="trip-hero"><div className="eyebrow">{eyebrow}</div><h1>{title}</h1><p>{subtitle}</p>{pill&&<span className="pill">{pill}</span>}</header>}
