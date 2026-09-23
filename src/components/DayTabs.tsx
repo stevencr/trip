@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import type {ReactNode} from 'react';
 
 export type DayTab<T> = {
   id:string;
@@ -8,7 +9,7 @@ export type DayTab<T> = {
 
 type Props<T> = {
   days:DayTab<T>[];
-  render:(day:T)=>React.ReactNode;
+  render:(day:T)=>ReactNode;
 };
 
 export function DayTabs<T>({days,render}:Props<T>){
