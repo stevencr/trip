@@ -36,41 +36,4 @@ const days=[
   }
 ] satisfies DayTab[];
 
-export function KirkbyLonsdale(){
-  return <section className="trip-page">
-    <header className="trip-hero">
-      <div className="eyebrow">26 — 27 September 2026</div>
-      <h1>Kirkby Lonsdale</h1>
-      <p>Good food · beautiful walks · Cumbrian countryside · no need to hurry</p>
-      <span className="pill">For Karen & Steven · staying at The Red Dragon</span>
-    </header>
-
-    <div className="countdown">
-      <span>Countdown to 9:00am · Saturday 26 September</span>
-      <span>Trip starts Saturday</span>
-    </div>
-
-    <DayTabs
-      days={days}
-      render={day=><div className="trip-content">
-        <div className="day-head">
-          <div className="date">{day.date}</div>
-          <h2>{day.title}</h2>
-          <p>{day.intro}</p>
-        </div>
-        <Timeline items={day.items}/>
-        <div className="tip">
-          {day.id==='sat'
-            ? '🌙 Evening idea · Stroll to Devil’s Bridge under the moonlight.'
-            : '🎒 Pack walking boots & a raincoat · Cumbrian weather is part of the charm.'}
-        </div>
-      </div>}
-    />
-
-    <div className="info-bar">
-      <div><strong>🏨 Base</strong>The Red Dragon · your cosy Kirkby Lonsdale base</div>
-      <div><strong>⛅ Weather forecast</strong>26 Sept · around 13°C · overcast, with a 43% chance of rain. 27 Sept · around 11°C · overcast, with a 35% chance of rain.</div>
-    </div>
-    <div className="trip-footer">Kirkby Lonsdale · 26–27 September 2026 · forecast checked 21 September</div>
-  </section>;
-}
+export function KirkbyLonsdale(){return <TripPage eyebrow="26 — 27 September 2026" title="Kirkby Lonsdale" subtitle="Good food · beautiful walks · Cumbrian countryside · no need to hurry" pill="For Karen & Steven · staying at The Red Dragon" days={days} countdown={{target:"2026-09-26T09:00:00",label:"Countdown to 9:00am · Saturday 26 September"}} weather={{base:"The Red Dragon · your cosy Kirkby Lonsdale base",forecast:"26 Sept · around 13°C · overcast, with a 43% chance of rain. 27 Sept · around 11°C · overcast, with a 35% chance of rain.",checked:"21 September"}} footer="Kirkby Lonsdale · 26–27 September 2026 · forecast checked 21 September"/>}
