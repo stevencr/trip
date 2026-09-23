@@ -1,6 +1,5 @@
-import {DayTabs} from '../components/DayTabs';
-import {Timeline} from '../components/Timeline';
-import type {Item} from '../components/Timeline';
+import {TripPage} from '../components/TripPage';
+import type {DayTab} from '../components/DayTabs';
 
 const days=[
   {
@@ -9,6 +8,7 @@ const days=[
     date:'Saturday · 26 September',
     title:'The weekend begins',
     intro:'Arrival, food, riverside walking and a castle.',
+    tip:'🌙 Evening idea · Stroll to Devil’s Bridge under the moonlight.',
     items:[
       {time:'09:00 – 10:30',title:'Arrival & breakfast at The Orange Tree',description:'Cosy café, Cumbrian breakfast & homemade scones.',icon:'☕',speech:'Arrival and breakfast at The Orange Tree. Cosy café, Cumbrian breakfast and homemade scones.'},
       {time:'10:45 – 12:30',title:'Ruskin’s View & River Lune wander',description:'Iconic view, riverbank walk & heron spotting.',icon:'🌳',speech:'Ruskin’s View and River Lune wander. Iconic view, walk along the riverbank, spot herons.'},
@@ -16,7 +16,7 @@ const days=[
       {time:'14:00 – 15:30',title:'Lunch at Lunesdale Deli',description:'Local cheeses, artisan sandwiches & Cumbrian ale.',icon:'🍽️',speech:'Lunch at Lunesdale Deli. Local cheeses, artisan sandwiches and Cumbrian ale.'},
       {time:'15:45 – 17:30',title:'Sizergh Castle & Gardens',description:'10 min drive · medieval tower, lake views & gardens.',icon:'🏰',speech:'Sizergh Castle and Gardens, National Trust. Ten minute drive. Medieval tower, lake views and borders.'},
       {time:'19:00 – late',title:'Dinner at The Royal Barn',description:'Seasonal British menu · book a window table.',icon:'🍷',speech:'Dinner at The Royal Barn. Seasonal British menu, book a window table.'}
-    ] satisfies Item[]
+    ] satisfies DayTab[]
   },
   {
     id:'sun',
@@ -24,6 +24,7 @@ const days=[
     date:'Sunday · 27 September',
     title:'Walk, tea & sunset',
     intro:'A slower second day through the Lune Valley.',
+    tip:'🎒 Pack walking boots & a raincoat · Cumbrian weather is part of the charm.',
     items:[
       {time:'08:30 – 09:30',title:'Breakfast at The Cobbles',description:'Sticky buns & locally roasted coffee.',icon:'🥐',speech:'Leisurely breakfast at The Cobbles. Famous sticky buns and locally roasted coffee.'},
       {time:'10:00 – 12:30',title:'Radstone & Casterton circular',description:'Moderate 4-mile loop · panoramic Lune Valley views.',icon:'⛰️',speech:'Walk to Radstone and Casterton circular. Moderate 4 mile loop, panoramic Lune Valley views.'},
