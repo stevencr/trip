@@ -1,0 +1,3 @@
+import {AudioButton} from './AudioButton';
+import type {Item} from './Timeline';
+export function TimelineItem({item}:{item:Item}){return <article className={item.special?'timeline-item special':'timeline-item'}><span className="timeline-dot">{item.icon}</span><div className="time">{item.time}</div><div className="item-card"><h3>{item.title}</h3><p>{item.description}</p>{item.tag&&<span className="tag">{item.tag}</span>}{item.link&&<div className="links"><a href={item.link.url} target="_blank" rel="noreferrer">{item.link.label} ↗</a></div>}{item.speech&&<AudioButton text={item.speech}/>}</div></article>}
