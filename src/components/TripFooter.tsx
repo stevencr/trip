@@ -1,0 +1,1 @@
+export function TripFooter({children}:{children:string}){return <div className="trip-footer">{children}</div>}
