@@ -103,6 +103,23 @@ Prefer official attraction, venue, tourism, or booking sources when adding links
 
 For external research, favour authoritative and current sources.
 
+
+## Social metadata
+
+Every trip must have a dedicated static HTML entry point so social crawlers receive trip-specific metadata before JavaScript runs.
+
+Create:
+- <slug>/index.html for the trip, alongside the existing root index.html
+- Open Graph metadata: og:title, og:type=website, og:url, og:image, og:image:alt, og:description, og:site_name
+- Twitter card metadata: twitter:card=summary_large_image, twitter:title, twitter:description, twitter:image
+- A trip-specific <title> and meta description
+
+Use a clean canonical URL such as https://stevencr.github.io/trip/<slug>/ and an absolute HTTPS image URL suitable for social previews. Prefer a stable, appropriately licensed destination image; record attribution/licensing requirements when applicable.
+
+The trip HTML entry must load /src/main.tsx and be added to the multi-page Vite inputs in vite.config.ts. Do not rely on runtime document.title or client-side meta-tag updates alone: social crawlers may inspect the initial HTML without executing the React application.
+
+When adding a trip, cross-check the slug, title, dates, description, social image, canonical URL and visible trip content so they all describe the same trip.
+
 ## Dates and consistency
 
 Cross-check:
