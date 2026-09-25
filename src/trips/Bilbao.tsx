@@ -36,17 +36,18 @@ const days=[
     id:'sat',
     label:'Sat 3',
     date:'Saturday · 3 October',
-    title:'Bridge, coast & sunset',
-    intro:'Get out to the estuary, cross a UNESCO-listed bridge and come back for Saturday night in Bilbao.',
+    title:'San Sebastián day trip',
+    intro:'A full day on the coast — La Concha, Monte Igueldo, the Old Town and a serious pintxos crawl.',
+    tip:'🌊 Donostia · Keep the day flexible. The official tourism route combines the coast, La Concha, pintxos and the Old Town.',
     items:[
-      {time:'09:30',title:'Breakfast',description:'Coffee and something substantial before heading for the coast.',icon:'☕'},
-      {time:'10:30',title:'Metro to Getxo',description:'Head towards the mouth of the Nervión for a change of scenery.',icon:'🚇'},
-      {time:'11:00 – 13:00',title:'Bizkaia Bridge & Portugalete',description:'Cross the 1893 transporter bridge by gondola, then explore the waterfront and historic Portugalete.',icon:'🌉',special:true,speech:'Bizkaia Bridge and Portugalete. Cross the 1893 transporter bridge by gondola, then explore the waterfront and historic Portugalete.',link:{label:'Bridge information',url:'https://www.visitbiscay.eus/en/-/the-puente-colgante-bizkaia-s-triumphal-arch'}},
-      {time:'13:15 – 15:00',title:'Lunch in Getxo',description:'Seafood, pintxos and a relaxed lunch near the estuary.',icon:'🍤'},
-      {time:'15:00 – 17:00',title:'Getxo waterfront',description:'Walk the coast around Ereaga and the elegant old villas before heading back into Bilbao.',icon:'🌊'},
-      {time:'18:00',title:'Artxanda viewpoint',description:'Take the funicular up for panoramic views over Bilbao before dinner. From 1 October it runs until 22:00.',icon:'🚠',speech:'Artxanda viewpoint. Take the funicular up for panoramic views over Bilbao before dinner.'},
-      {time:'20:30',title:'Saturday night dinner',description:'A long Basque dinner back in the city.',icon:'🍷',tag:'BOOK AHEAD'},
-      {time:'22:30+',title:'The Usual Suspects · Saturday night',description:'Pintxos, bars and cocktails around Casco Viejo or the city centre. No fixed route.',icon:'🍻',special:true,speech:'The Usual Suspects Saturday night. Pintxos, bars and cocktails around Casco Viejo or the city centre. No fixed route.'}
+      {time:'MORNING',title:'Travel to San Sebastián',description:'Head east from Bilbao for a full day in Donostia / San Sebastián. Check the latest public-transport timetable before leaving.',icon:'🚌',tag:'CHECK TIMETABLE'},
+      {time:'10:30',title:'Monte Igueldo viewpoint',description:'Take the historic funicular up Monte Igueldo for the classic panorama over La Concha Bay and the city.',icon:'🚠',special:true,speech:'Monte Igueldo viewpoint. Take the historic funicular up for the classic panorama over La Concha Bay and San Sebastián.',link:{label:'Monte Igueldo',url:'https://sansebastianturismoa.eus/en/to-do/hills/mount-igeldo/'}},
+      {time:'12:00',title:'Peine del Viento & Ondarreta',description:'Walk down past the Peine del Viento sculptures and along Ondarreta, following the coastline towards La Concha.',icon:'🌊',speech:'Peine del Viento and Ondarreta. Walk along the coast towards La Concha, taking in Chillida’s famous sculptures.'},
+      {time:'13:00',title:'La Concha & lunch',description:'Stroll the promenade beside one of Europe’s great city beaches, then settle in for lunch.',icon:'🏖️'},
+      {time:'14:30',title:'Parte Vieja pintxos crawl',description:'Head into the Old Town and work through the bars around Plaza de la Constitución and the harbour — pintxo by pintxo.',icon:'🍢',special:true,speech:'Parte Vieja pintxos crawl. Head into the Old Town and work through the bars around Plaza de la Constitución and the harbour, pintxo by pintxo.',link:{label:'San Sebastián Old Town',url:'https://sansebastianturismoa.eus/en/to-do/district-by-district/centre-old-town/'}},
+      {time:'16:30',title:'Old Town & harbour wander',description:'Explore the narrow streets, port and historic heart of the city, with time for another pintxo or drink.',icon:'🚶'},
+      {time:'18:00',title:'Last look at La Concha',description:'Walk back towards the bay for one final sea view before heading back to Bilbao.',icon:'🌅'},
+      {time:'EVENING',title:'Back to Bilbao',description:'Return to Bilbao for a relaxed final evening and dinner back in the city.',icon:'🚆'}
     ]
   },
   {
