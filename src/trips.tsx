@@ -1,3 +1,4 @@
 import {Edinburgh} from './trips/Edinburgh';
 import {KirkbyLonsdale} from './trips/KirkbyLonsdale';
-export const trips=[{path:'/edinburgh',shortTitle:'Edinburgh',title:'Edinburgh',date:'27–30 August 2026',summary:'Castles · old streets · whisky · Fringe · folk music',element:<Edinburgh/>},{path:'/kirkby-lonsdale',shortTitle:'Kirkby Lonsdale',title:'Kirkby Lonsdale',date:'26–27 September 2026',summary:'Good food · beautiful walks · Cumbrian countryside · no need to hurry',element:<KirkbyLonsdale/>}] as const;
+import {Bilbao} from './trips/Bilbao';
+export const trips=[{path:'/edinburgh',shortTitle:'Edinburgh',title:'Edinburgh',date:'27–30 August 2026',summary:'Castles · old streets · whisky · Fringe · folk music',element:<Edinburgh/>},{path:'/kirkby-lonsdale',shortTitle:'Kirkby Lonsdale',title:'Kirkby Lonsdale',date:'26–27 September 2026',summary:'Good food · beautiful walks · Cumbrian countryside · no need to hurry',element:<KirkbyLonsdale/>},{path:'/bilbao',shortTitle:'Bilbao',title:'Bilbao · The Usual Suspects',date:'1–4 October 2026',summary:'Pintxos · Basque food · art · coast · bars · good company',element:<Bilbao/>}] as const;
