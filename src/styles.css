@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 
 :root{
   --bg:#f5f0e7;--paper:#fffdf9;--paper-soft:#faf6ee;--forest:#173c35;--forest-2:#214b42;
@@ -21,7 +21,7 @@ button{touch-action:manipulation}
 }
 .brand{display:flex;align-items:center;gap:11px;color:var(--forest);text-decoration:none}
 .brand-mark{width:40px;height:40px;display:grid;place-items:center;border-radius:13px;background:var(--forest);color:#fff;box-shadow:0 5px 14px rgba(23,60,53,.18)}
-.brand strong,.brand small{display:block}.brand strong{font:600 1.08rem Fraunces,serif}.brand small{color:var(--muted);font-size:.62rem;letter-spacing:.03em}
+.brand strong,.brand small{display:block}.brand strong{font:600 1.08rem Manrope,sans-serif}.brand small{color:var(--muted);font-size:.62rem;letter-spacing:.03em}
 .desktop-nav{display:flex;gap:4px;margin-left:auto}
 .desktop-nav a,.mobile-nav a{padding:9px 14px;border-radius:999px;color:var(--muted);text-decoration:none;font-size:.75rem;font-weight:700;transition:background .2s,color .2s,transform .2s}
 .desktop-nav a:hover,.mobile-nav a:hover{background:rgba(23,60,53,.07);color:var(--forest)}
