@@ -11,7 +11,7 @@ function getEventWindow(date:string,time:string){
   const dateValue=new Date(`${dateParts[2]} ${dateParts[1]}, ${year}`);
   if(Number.isNaN(dateValue.getTime()))return null;
 
-  const match=time.match(/^(\d{1,2}):(\d{2})(?:\s*[–-]\s*(\d{1,2}):(\d{2}|late)|\+)?$/i);
+  const match=time.match(/^(\d{1,2}):(\d{2})(?:\s*[–-]\s*(?:(\d{1,2}):(\d{2})|late)|\+)?$/i);
   if(!match)return null;
 
   const [,startHour,startMinute,endHour,endMinute]=match;
