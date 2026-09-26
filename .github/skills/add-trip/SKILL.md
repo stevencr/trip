@@ -55,6 +55,22 @@ Each timeline item should normally contain:
 
 Build realistic pacing. Avoid stuffing every day with attractions. Leave breathing room for food, walking, browsing, and delays.
 
+## Live event highlighting
+
+Timeline events with parseable times are automatically checked against the current local device time.
+
+Use normal time ranges such as:
+- `10:30 – 13:00`
+- `17:00`
+- `21:30+`
+- `19:00 – late`
+
+A single time represents an approximate one-hour event. A `+` or `late` ending means the event remains active until 23:59. Descriptive times such as `AFTERNOON`, `MORNING`, `LATER`, or `LAST WORDS` are intentionally not highlighted because they do not define a reliable time window.
+
+The active event receives a subtle `NOW` badge and highlighted timeline treatment. The Timeline component refreshes automatically every 30 seconds and when the page becomes visible again.
+
+Do not implement event highlighting separately inside individual trip files; keep it in Timeline/TimelineItem so every trip benefits automatically.
+
 ## Countdown
 
 If the trip has a known start date/time, add a countdown through the shared TripPage countdown prop.
