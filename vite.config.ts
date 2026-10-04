@@ -11,7 +11,6 @@ export default defineConfig({
         edinburgh: 'edinburgh/index.html',
         kirkbyLonsdale: 'kirkby-lonsdale/index.html',
         bilbao: 'bilbao/index.html',
-        porto: 'porto/index.html',
       },
     },
   },
