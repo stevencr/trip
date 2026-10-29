@@ -1,27 +1,17 @@
 import {TripPage} from '../components/TripPage';
 import type {DayTab} from '../components/DayTabs';
 
-const pubRouteUrl='https://www.google.com/maps/dir/Maray,+Royal+Albert+Dock,+Liverpool/The+One+OClock+Gun,+Albert+Dock,+Liverpool/Pump+House,+Albert+Dock,+Liverpool/The+Baltic+Fleet,+Wapping,+Liverpool/The+Bridewell,+Campbell+Square,+Liverpool/The+Lion+Tavern,+Moorfields,+Liverpool/Ye+Hole+in+Ye+Wall,+Hackins+Hey,+Liverpool/Thomas+Rigbys,+Dale+Street,+Liverpool/Cavern+Pub,+Mathew+Street,+Liverpool/Pogue+Mahone,+Seel+Street,+Liverpool/data=!4m2!4m1!3e2';
+const pubRouteUrl='https://www.google.com/maps/dir/Maray,+Royal+Albert+Dock,+Liverpool/The+One+OClock+Gun,+Albert+Dock,+Liverpool/Pump+House,+Albert+Dock,+Liverpool/The+Baltic+Fleet,+Wapping,+Liverpool/The+Bridewell,+Campbell+Square,+Liverpool/The+Lion+Tavern,+Moorfields,+Liverpool/Ye+Hole+in+Ye+Wall,+Hackins+Hey,+Liverpool/Thomas+Rigbys,+Dale+Street,+Liverpool/Cavern+Pub,+Mathew+Street,+Liverpool/Pogue+Mahone,+Seel+Street,+Liverpool/St+Peter%27s+Tavern,+Seel+Street,+Liverpool/data=!4m2!4m1!3e2';
+const pubRouteEmbed='https://www.google.com/maps?output=embed&dirflg=w&saddr=Maray,+Royal+Albert+Dock,+Liverpool&daddr=The+One+OClock+Gun,+Liverpool+to:Pump+House,+Liverpool+to:The+Baltic+Fleet,+Liverpool+to:The+Bridewell,+Liverpool+to:The+Lion+Tavern,+Liverpool+to:Ye+Hole+in+Ye+Wall,+Liverpool+to:Thomas+Rigbys,+Liverpool+to:Cavern+Pub,+Liverpool+to:Pogue+Mahone,+Liverpool+to:St+Peter%27s+Tavern,+Liverpool';
 
-function PubRouteMap(){return <section aria-label="Friday pub crawl map" style={{margin:'1rem 0 1.25rem',padding:'1rem',border:'1px solid var(--border, #d8d8d8)',borderRadius:'16px'}}>
+function PubRouteMap(){return <section aria-label="Friday pub crawl map" style={{margin:'1rem 0 1.25rem',padding:'1rem',border:'1px solid var(--border, #d8d8d8)',borderRadius:'16px',background:'var(--paper, #fff)'}}>
   <div style={{display:'flex',justifyContent:'space-between',alignItems:'baseline',gap:'1rem',flexWrap:'wrap'}}>
     <h2 style={{margin:0,fontSize:'1.1rem'}}>Friday pub crawl · walking route</h2>
     <a href={pubRouteUrl} target="_blank" rel="noreferrer">Open walking directions ↗</a>
   </div>
-  <p style={{margin:'0.4rem 0 0.9rem',fontSize:'.9rem',opacity:.8}}>A schematic map, not to scale. Follow the stops in numbered order from Maray at Albert Dock to Ropewalks.</p>
-  <svg viewBox="0 0 340 220" role="img" aria-label="Walking route from Maray through the dockside pubs, The Bridewell, traditional city pubs and Cavern Quarter, finishing at Pogue Mahone" style={{display:'block',width:'100%',maxWidth:'520px',height:'auto',margin:'0 auto'}}>
-    <path d="M35 28 L100 28 L158 55 L205 82 L270 82 L285 125 L240 157 L170 157 L105 190 L35 190" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" opacity=".55"/>
-    <g fill="var(--surface, #f7f7f7)" stroke="currentColor" strokeWidth="1.5">
-      <circle cx="35" cy="28" r="11"/><circle cx="100" cy="28" r="11"/><circle cx="158" cy="55" r="11"/><circle cx="205" cy="82" r="11"/><circle cx="270" cy="82" r="11"/><circle cx="285" cy="125" r="11"/><circle cx="240" cy="157" r="11"/><circle cx="170" cy="157" r="11"/><circle cx="105" cy="190" r="11"/><circle cx="35" cy="190" r="11"/>
-    </g>
-    <g fill="currentColor" fontSize="10" fontWeight="700" textAnchor="middle" dominantBaseline="central">
-      <text x="35" y="28">1</text><text x="100" y="28">2</text><text x="158" y="55">3</text><text x="205" y="82">4</text><text x="270" y="82">5</text><text x="285" y="125">6</text><text x="240" y="157">7</text><text x="170" y="157">8</text><text x="105" y="190">9</text><text x="35" y="190">10</text>
-    </g>
-    <g fill="currentColor" fontSize="9">
-      <text x="35" y="10" textAnchor="start">Maray</text><text x="100" y="10" textAnchor="middle">One O'Clock Gun</text><text x="158" y="39" textAnchor="middle">Pump House</text><text x="205" y="65" textAnchor="middle">Baltic Fleet</text><text x="270" y="65" textAnchor="middle">Bridewell</text><text x="298" y="125" textAnchor="start">Lion Tavern</text><text x="240" y="176" textAnchor="middle">Ye Hole in Ye Wall</text><text x="170" y="143" textAnchor="middle">Thomas Rigby's</text><text x="105" y="208" textAnchor="middle">Cavern Pub</text><text x="35" y="208" textAnchor="start">Pogue Mahone</text>
-    </g>
-  </svg>
-  <p style={{margin:'0.5rem 0 0',fontSize:'.85rem'}}>Allow roughly 30–40 minutes of total walking between stops, plus time in each pub. The route is designed to keep moving broadly from the waterfront towards the centre rather than bouncing back and forth.</p>
+  <p style={{margin:'0.4rem 0 0.9rem',fontSize:'.9rem',opacity:.8}}>Live street map and walking directions from Maray, with all ten pub stops in sequence.</p>
+  <iframe title="Interactive Liverpool pub crawl walking map" src={pubRouteEmbed} loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen style={{display:'block',width:'100%',height:'min(65vh,520px)',minHeight:'340px',border:0,borderRadius:'12px',background:'#f4f1eb'}}/>
+  <p style={{margin:'0.7rem 0 0',fontSize:'.85rem'}}>Final stops are around Seel Street. St Peter’s Tavern is the venue formerly known as Alma de Cuba; check the venue’s current opening details before setting off.</p>
 </section>}
 
 const days=[
@@ -47,7 +37,8 @@ const days=[
       {time:'21:10',title:'6 · Ye Hole in Ye Wall',description:'Head back south a few minutes to this tucked-away traditional pub on Hackins Hey. Small, characterful and worth seeking out.',icon:'🍺',special:true,link:{label:'Ye Hole in Ye Wall map',url:'https://www.google.com/maps/search/?api=1&query=Ye+Hole+in+Ye+Wall+Hackins+Hey+Liverpool'}},
       {time:'21:40',title:'7 · Thomas Rigby’s',description:'Carry on towards Dale Street for a historic city-centre pub with traditional ales. A handy stop on the way towards Mathew Street.',icon:'🍻',special:true,link:{label:'Thomas Rigby’s map',url:'https://www.google.com/maps/search/?api=1&query=Thomas+Rigbys+Dale+Street+Liverpool'}},
       {time:'22:10',title:'8 · Cavern Pub',description:'Finish the city-centre stretch in the Cavern Quarter. The Cavern Pub is opposite the Cavern Club, has free entry and regularly features live music. No tour required—just a pub and music stop.',icon:'🎸',special:true,link:{label:'Cavern Pub live music & opening info',url:'https://www.cavernclub.com/the-cavern-club-liverpool/cavern-pub-liverpool/'}},
-      {time:'22:45+',title:'9 · Pogue Mahone',description:'Walk south to Seel Street for Guinness, Irish-pub atmosphere and a livelier late finish. From here, arrange a taxi back to Titanic Hotel at Stanley Dock.',icon:'☘️',special:true,speech:'Friday pub crawl: Maray, the dockside pubs, traditional city-centre locals, the Cavern Quarter and Pogue Mahone.',link:{label:'Pogue Mahone',url:'https://apubcalledpogues.com/'}}
+      {time:'22:45+',title:'9 · Pogue Mahone',description:'Walk south to Seel Street for Guinness, Irish-pub atmosphere and a livelier late finish. From here, arrange a taxi back to Titanic Hotel at Stanley Dock.',icon:'☘️',special:true,speech:'Friday pub crawl: Maray, the dockside pubs, traditional city-centre locals, the Cavern Quarter and Pogue Mahone.',link:{label:'Pogue Mahone',url:'https://apubcalledpogues.com/'}},
+      {time:'23:15+',title:'10 · St Peter’s Tavern (formerly Alma de Cuba)',description:'Finish at St Peter’s Tavern, the venue formerly known as Alma de Cuba, around Seel Street. Check the current entry and opening arrangements on the night, then take a taxi back to Titanic Hotel.',icon:'🍸',special:true,link:{label:'St Peter’s Tavern · map',url:'https://www.google.com/maps/search/?api=1&query=St+Peter%27s+Tavern+Seel+Street+Liverpool'}}
     ]
   },
   {
