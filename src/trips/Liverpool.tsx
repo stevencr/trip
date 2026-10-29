@@ -1,25 +1,53 @@
 import {TripPage} from '../components/TripPage';
 import type {DayTab} from '../components/DayTabs';
 
+const pubRouteUrl='https://www.google.com/maps/dir/Maray,+Royal+Albert+Dock,+Liverpool/The+One+OClock+Gun,+Albert+Dock,+Liverpool/Pump+House,+Albert+Dock,+Liverpool/The+Baltic+Fleet,+Wapping,+Liverpool/The+Bridewell,+Campbell+Square,+Liverpool/The+Lion+Tavern,+Moorfields,+Liverpool/Ye+Hole+in+Ye+Wall,+Hackins+Hey,+Liverpool/Thomas+Rigbys,+Dale+Street,+Liverpool/Cavern+Pub,+Mathew+Street,+Liverpool/Pogue+Mahone,+Seel+Street,+Liverpool/data=!4m2!4m1!3e2';
+
+function PubRouteMap(){return <section aria-label="Friday pub crawl map" style={{margin:'1rem 0 1.25rem',padding:'1rem',border:'1px solid var(--border, #d8d8d8)',borderRadius:'16px'}}>
+  <div style={{display:'flex',justifyContent:'space-between',alignItems:'baseline',gap:'1rem',flexWrap:'wrap'}}>
+    <h2 style={{margin:0,fontSize:'1.1rem'}}>Friday pub crawl · walking route</h2>
+    <a href={pubRouteUrl} target="_blank" rel="noreferrer">Open walking directions ↗</a>
+  </div>
+  <p style={{margin:'0.4rem 0 0.9rem',fontSize:'.9rem',opacity:.8}}>A schematic map, not to scale. Follow the stops in numbered order from Maray at Albert Dock to Ropewalks.</p>
+  <svg viewBox="0 0 340 220" role="img" aria-label="Walking route from Maray through the dockside pubs, The Bridewell, traditional city pubs and Cavern Quarter, finishing at Pogue Mahone" style={{display:'block',width:'100%',maxWidth:'520px',height:'auto',margin:'0 auto'}}>
+    <path d="M35 28 L100 28 L158 55 L205 82 L270 82 L285 125 L240 157 L170 157 L105 190 L35 190" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" opacity=".55"/>
+    <g fill="var(--surface, #f7f7f7)" stroke="currentColor" strokeWidth="1.5">
+      <circle cx="35" cy="28" r="11"/><circle cx="100" cy="28" r="11"/><circle cx="158" cy="55" r="11"/><circle cx="205" cy="82" r="11"/><circle cx="270" cy="82" r="11"/><circle cx="285" cy="125" r="11"/><circle cx="240" cy="157" r="11"/><circle cx="170" cy="157" r="11"/><circle cx="105" cy="190" r="11"/><circle cx="35" cy="190" r="11"/>
+    </g>
+    <g fill="currentColor" fontSize="10" fontWeight="700" textAnchor="middle" dominantBaseline="central">
+      <text x="35" y="28">1</text><text x="100" y="28">2</text><text x="158" y="55">3</text><text x="205" y="82">4</text><text x="270" y="82">5</text><text x="285" y="125">6</text><text x="240" y="157">7</text><text x="170" y="157">8</text><text x="105" y="190">9</text><text x="35" y="190">10</text>
+    </g>
+    <g fill="currentColor" fontSize="9">
+      <text x="35" y="10" textAnchor="start">Maray</text><text x="100" y="10" textAnchor="middle">One O'Clock Gun</text><text x="158" y="39" textAnchor="middle">Pump House</text><text x="205" y="65" textAnchor="middle">Baltic Fleet</text><text x="270" y="65" textAnchor="middle">Bridewell</text><text x="298" y="125" textAnchor="start">Lion Tavern</text><text x="240" y="176" textAnchor="middle">Ye Hole in Ye Wall</text><text x="170" y="143" textAnchor="middle">Thomas Rigby's</text><text x="105" y="208" textAnchor="middle">Cavern Pub</text><text x="35" y="208" textAnchor="start">Pogue Mahone</text>
+    </g>
+  </svg>
+  <p style={{margin:'0.5rem 0 0',fontSize:'.85rem'}}>Allow roughly 30–40 minutes of total walking between stops, plus time in each pub. The route is designed to keep moving broadly from the waterfront towards the centre rather than bouncing back and forth.</p>
+</section>}
+
 const days=[
   {
     id:'fri',
     label:'Fri 30',
     date:'Friday · 30 October 2026',
     title:'Liverpool · arrive and explore',
-    intro:'You are staying at the Titanic Hotel and have dinner booked at Maray on Albert Dock for 17:15. Settle in first, enjoy dinner, then head out for a proper Liverpool pub crawl.',
-    tip:'🍺 After dinner, start with the historic dock-road pubs and work towards the city centre. It is a decent walk overall, so skip a stop or use a taxi if you prefer.'
+    intro:'You are staying at the Titanic Hotel and have dinner booked at Maray on Albert Dock for 17:15. After dinner, this is the main event: a generous crawl of proper Liverpool pubs, moving from the dockside into the city centre.',
+    tip:'🍺 This is an ambitious crawl. Treat the times as guides, have one drink per stop, and skip a pub if you want more time somewhere good. The Titanic Hotel is at Stanley Dock, so arrange a taxi back at the end.',
     items:[
       {time:'10:30',title:'Arrive at Titanic Hotel',description:'Head to Titanic Hotel Liverpool at Stanley Dock. Ask reception about luggage storage if the room is not ready yet; early check-in is subject to availability.',icon:'🧳',special:true,link:{label:'Titanic Hotel Liverpool',url:'https://www.titanichotelliverpool.com/'}},
-      {time:'11:15',title:'Travel into the city centre',description:'Take a taxi or check the current bus options towards the waterfront. Start around Pier Head and the Three Graces.',icon:'🚕'},
+      {time:'11:15',title:'Travel into the city centre',description:'Take a taxi or check current bus options towards the waterfront. Start around Pier Head and the Three Graces.',icon:'🚕'},
       {time:'12:00',title:'Pier Head & waterfront',description:'See the Royal Liver Building, the Cunard Building and the waterfront views. A relaxed first walk to get your bearings.',icon:'🌊',special:true},
       {time:'13:00',title:'Lunch around the docks',description:'Head towards Royal Albert Dock for lunch and a wander beside the historic warehouses. Keep it flexible depending on arrival and luggage.',icon:'🍽️',link:{label:'Royal Albert Dock',url:'https://albertdock.com/'}},
-      {time:'14:30',title:'Docklands drink to start the pub tour',description:'Start close to the hotel at Stanley’s Bar & Grill at Titanic Hotel, or take a short walk around Stanley Dock first. Have one drink and enjoy the historic dockside setting.',icon:'🍺',special:true,link:{label:'Stanley’s Bar & Grill',url:'https://www.titanichotelliverpool.com/'}},
-      {time:'15:30',title:'Head into the Cavern Quarter',description:'Take a taxi or walk into the city centre, then explore Mathew Street. The Cavern Pub is opposite the Cavern Club; the pub has free entry and live music is listed from 16:00 on Friday. The Cavern Club itself has live music throughout the day and evening.',icon:'🎸',special:true,link:{label:'Cavern Pub live music & opening info',url:'https://www.cavernclub.com/the-cavern-club-liverpool/cavern-pub-liverpool/'}},
-      {time:'17:00',title:'The Bridewell',description:'Continue south-west to this Grade II-listed former Victorian police lock-up. The old cells are now seating areas; it opens from midday. Allow around 30–45 minutes for a drink and a look around.',icon:'🍻',special:true,link:{label:'The Bridewell official site',url:'https://thebridewellpub.co.uk/'}},
-      {time:'18:15',title:'Pogue Mahone on Seel Street',description:'Finish the main crawl at this Irish pub for Guinness and a lively atmosphere. The venue says it opens from midday and has live music at weekends. It is a short walk from The Bridewell.',icon:'☘️',special:true,link:{label:'Pogue Mahone official site',url:'https://apubcalledpogues.com/'}},
-      {time:'19:30',title:'Dinner & choose your next stop',description:'Eat around Ropewalks or the city centre, then decide whether to return to Mathew Street for more live music or head back to the hotel. Keep the pace comfortable and check your return transport.',icon:'🍽️',special:true},
-      {time:'21:00+',title:'Optional live music around Mathew Street',description:'If you still have energy, return to the Cavern Quarter for the Cavern Club or Cavern Pub. The Cavern Club charges for entry; the Cavern Pub is free. This is a music-venue stop, not a Beatles tour.',icon:'🎶',special:true,speech:'Liverpool pub crawl: the docks, the Cavern Quarter, The Bridewell and Pogue Mahone.',link:{label:'The Cavern Club opening times',url:'https://www.cavernclub.com/opening-times-and-prices/'}}
+      {time:'16:45',title:'Walk to Maray',description:'Head to Maray at Royal Albert Dock in good time for your booking.',icon:'🚶',special:true,link:{label:'Maray · Royal Albert Dock',url:'https://www.google.com/maps/search/?api=1&query=Maray+Royal+Albert+Dock+Liverpool'}},
+      {time:'17:15',title:'Maray · booked dinner',description:'Your booked meal. Enjoy dinner and drinks before setting off on the pub crawl at about 18:45.',icon:'🍽️',special:true},
+      {time:'18:45',title:'1 · The One O’Clock Gun',description:'A proper dockside pub on Albert Dock. Start with a local beer or Guinness and enjoy the waterfront setting.',icon:'🍺',special:true,link:{label:'The One O’Clock Gun',url:'https://theoneoclockgun.pub/'}},
+      {time:'19:10',title:'2 · Pump House',description:'Stay around the Albert Dock for this characterful pub in a former hydraulic engine house. This is an easy, short walk from The One O’Clock Gun.',icon:'🍻',special:true,link:{label:'Pump House map',url:'https://www.google.com/maps/search/?api=1&query=Pump+House+Albert+Dock+Liverpool'}},
+      {time:'19:35',title:'3 · The Baltic Fleet',description:'Walk out towards Wapping to this distinctive Victorian, Grade II-listed dock-road pub, known for its cask ales and old-school character.',icon:'⚓',special:true,link:{label:'The Baltic Fleet',url:'https://oldtownliverpool.co.uk/the-baltic-fleet/'}},
+      {time:'20:05',title:'4 · The Bridewell',description:'Head inland to the former Victorian police lock-up. The original cells are now part of the pub’s seating, making this one of the most unusual stops on the route.',icon:'🍺',special:true,link:{label:'The Bridewell official site',url:'https://thebridewellpub.co.uk/'}},
+      {time:'20:40',title:'5 · The Lion Tavern',description:'Continue north towards Moorfields for a classic pub with a historic interior and a strong reputation for well-kept cask ale.',icon:'🍻',special:true,link:{label:'The Lion Tavern map',url:'https://www.google.com/maps/search/?api=1&query=The+Lion+Tavern+Moorfields+Liverpool'}},
+      {time:'21:10',title:'6 · Ye Hole in Ye Wall',description:'Head back south a few minutes to this tucked-away traditional pub on Hackins Hey. Small, characterful and worth seeking out.',icon:'🍺',special:true,link:{label:'Ye Hole in Ye Wall map',url:'https://www.google.com/maps/search/?api=1&query=Ye+Hole+in+Ye+Wall+Hackins+Hey+Liverpool'}},
+      {time:'21:40',title:'7 · Thomas Rigby’s',description:'Carry on towards Dale Street for a historic city-centre pub with traditional ales. A handy stop on the way towards Mathew Street.',icon:'🍻',special:true,link:{label:'Thomas Rigby’s map',url:'https://www.google.com/maps/search/?api=1&query=Thomas+Rigbys+Dale+Street+Liverpool'}},
+      {time:'22:10',title:'8 · Cavern Pub',description:'Finish the city-centre stretch in the Cavern Quarter. The Cavern Pub is opposite the Cavern Club, has free entry and regularly features live music. No tour required—just a pub and music stop.',icon:'🎸',special:true,link:{label:'Cavern Pub live music & opening info',url:'https://www.cavernclub.com/the-cavern-club-liverpool/cavern-pub-liverpool/'}},
+      {time:'22:45+',title:'9 · Pogue Mahone',description:'Walk south to Seel Street for Guinness, Irish-pub atmosphere and a livelier late finish. From here, arrange a taxi back to Titanic Hotel at Stanley Dock.',icon:'☘️',special:true,speech:'Friday pub crawl: Maray, the dockside pubs, traditional city-centre locals, the Cavern Quarter and Pogue Mahone.',link:{label:'Pogue Mahone',url:'https://apubcalledpogues.com/'}}
     ]
   },
   {
@@ -27,20 +55,17 @@ const days=[
     label:'Sat 31',
     date:'Saturday · 31 October 2026',
     title:'Liverpool · another day in the city',
-    intro:'Explore the city by day, then make Saturday a proper pub day: historic interiors, good cask ale and a final stop for live music.',
-    tip:'🚕 The Titanic Hotel is at Stanley Dock, away from the central pub areas. Check your return taxi or bus options before the evening gets late.',
+    intro:'Keep Saturday flexible after Friday’s big night: enjoy the waterfront, explore the city at your own pace and choose an activity or a relaxed meal.',
+    tip:'🚕 No pub crawl planned for Saturday. The Titanic Hotel is at Stanley Dock, away from the central attractions, so check return transport before heading out.',
     items:[
       {time:'09:30',title:'Breakfast & coffee',description:'Take it easy after Friday night. Have breakfast at the hotel or find a café in town before the day gets going.',icon:'☕'},
       {time:'10:30',title:'Royal Albert Dock & waterfront',description:'Enjoy the dockside walk, shops and waterfront architecture in daylight. Leave time for a coffee and a few photos.',icon:'⚓',link:{label:'Royal Albert Dock',url:'https://albertdock.com/'}},
-      {time:'12:00',title:'The Bridewell or a traditional city pub',description:'If you missed it on Friday, pop into The Bridewell for its unusual former-cell seating; otherwise try a traditional city-centre pub for a pint before lunch.',icon:'🍺',special:true,link:{label:'The Bridewell official site',url:'https://thebridewellpub.co.uk/'}},
-      {time:'13:00',title:'Lunch in the city centre',description:'Find a relaxed pub or restaurant around the centre. Keep the afternoon open rather than booking every hour.',icon:'🍽️',special:true},
-      {time:'14:30',title:'Mathew Street & Cavern Quarter',description:'Return to the Cavern Quarter for the atmosphere and live music. The Cavern Pub lists Saturday live music from 15:00, with free entry; the Cavern Club also runs live music during the day.',icon:'🎸',special:true,link:{label:'Cavern Pub live music & opening info',url:'https://www.cavernclub.com/the-cavern-club-liverpool/cavern-pub-liverpool/'}},
-      {time:'16:30',title:'Pogue Mahone',description:'Head to Seel Street for an Irish pub stop, Guinness and weekend live-music atmosphere. It is a handy base for the Ropewalks area before dinner.',icon:'☘️',special:true,link:{label:'Pogue Mahone official site',url:'https://apubcalledpogues.com/'}},
-      {time:'18:00',title:'Traditional pub stop: Ye Hole in Ye Wall',description:'Head towards Hackins Hey for a small, characterful old-school pub. If it is busy, the nearby Denbigh Castle is a good back-up.',icon:'🍺',special:true,link:{label:'Ye Hole in Ye Wall',url:'https://www.google.com/maps/search/?api=1&query=Ye+Hole+in+Ye+Wall+Liverpool'}},
-      {time:'19:00',title:'The Lion Tavern',description:'A well-regarded traditional pub near Moorfields, especially good for well-kept cask ale and a historic interior. Check the time and route before heading north.',icon:'🍻',special:true,link:{label:'The Lion Tavern',url:'https://www.google.com/maps/search/?api=1&query=The+Lion+Tavern+Liverpool'}},
-      {time:'20:00+',title:'Final pint around Mathew Street',description:'Finish with the Cavern Pub and surrounding pubs for live music, then arrange your return to Titanic Hotel at Stanley Dock. Use a taxi if you are ready to call it a night.',icon:'🎶',special:true,speech:'Saturday: traditional Liverpool pubs, historic interiors, cask ale and live music.',link:{label:'Cavern Pub live music & opening info',url:'https://www.cavernclub.com/the-cavern-club-liverpool/cavern-pub-liverpool/'}}
+      {time:'12:00',title:'Explore the city centre',description:'Wander around the shops, architecture and waterfront at your own pace. Keep the plan loose rather than booking every hour.',icon:'🏙️'},
+      {time:'13:00',title:'Lunch',description:'Choose a café or restaurant in the city centre, Albert Dock or around Liverpool ONE.',icon:'🍽️',special:true},
+      {time:'14:30',title:'Choose an afternoon activity',description:'Leave the afternoon open for shopping, galleries that are open, a waterfront walk or live music if something appeals. Check opening times before setting off.',icon:'🗺️',special:true,link:{label:'Visit Liverpool',url:'https://www.visitliverpool.com/'}},
+      {time:'17:00',title:'Return to the hotel & freshen up',description:'Head back to Titanic Hotel, take a breather and decide on dinner. Book a taxi or check public transport if you are heading out again.',icon:'🧳'}
     ]
   }
 ] satisfies DayTab[];
 
-export function Liverpool(){return <TripPage eyebrow="30 — 31 October 2026" title={<>Liverpool<br/><em>city weekend</em></>} subtitle="Waterfront · historic docks · pubs · live music" pill="30–31 October 2026 · 1 night · Titanic Hotel" days={days} countdown={{target:"2026-10-30T10:30:00",label:"Countdown to arrival · Friday 30 October"}} footer="Liverpool · 30–31 October 2026 · Titanic Hotel"/>}
+export function Liverpool(){return <TripPage eyebrow="30 — 31 October 2026" title={<>Liverpool<br/><em>city weekend</em></>} subtitle="Waterfront · historic docks · pubs · live music" pill="30–31 October 2026 · 1 night · Titanic Hotel" days={days} countdown={{target:"2026-10-30T10:30:00",label:"Countdown to arrival · Friday 30 October"}} routeMap={<PubRouteMap/>} footer="Liverpool · 30–31 October 2026 · Titanic Hotel"/>}
