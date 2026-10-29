@@ -7,8 +7,8 @@ const days=[
     label:'Fri 30',
     date:'Friday · 30 October 2026',
     title:'Liverpool · arrive and explore',
-    intro:'Arrive at 10:30, explore the waterfront, then follow a pub route from Stanley Dock into the city centre: dockside drink, the Cavern Quarter, The Bridewell and Pogue Mahone.',
-    tip:'🍺 Pub route: start at Stanley Dock, then head into town. The stops are spread out, so use a taxi or allow time for the walks; check opening and live-music times on the day.',
+    intro:'You are staying at the Titanic Hotel and have dinner booked at Maray on Albert Dock for 17:15. Settle in first, enjoy dinner, then head out for a proper Liverpool pub crawl.',
+    tip:'🍺 After dinner, start with the historic dock-road pubs and work towards the city centre. It is a decent walk overall, so skip a stop or use a taxi if you prefer.'
     items:[
       {time:'10:30',title:'Arrive at Titanic Hotel',description:'Head to Titanic Hotel Liverpool at Stanley Dock. Ask reception about luggage storage if the room is not ready yet; early check-in is subject to availability.',icon:'🧳',special:true,link:{label:'Titanic Hotel Liverpool',url:'https://www.titanichotelliverpool.com/'}},
       {time:'11:15',title:'Travel into the city centre',description:'Take a taxi or check the current bus options towards the waterfront. Start around Pier Head and the Three Graces.',icon:'🚕'},
@@ -27,7 +27,7 @@ const days=[
     label:'Sat 31',
     date:'Saturday · 31 October 2026',
     title:'Liverpool · another day in the city',
-    intro:'Take a relaxed look around Liverpool in daylight, then enjoy a second round of characterful pubs and live music if you fancy it.',
+    intro:'Explore the city by day, then make Saturday a proper pub day: historic interiors, good cask ale and a final stop for live music.',
     tip:'🚕 The Titanic Hotel is at Stanley Dock, away from the central pub areas. Check your return taxi or bus options before the evening gets late.',
     items:[
       {time:'09:30',title:'Breakfast & coffee',description:'Take it easy after Friday night. Have breakfast at the hotel or find a café in town before the day gets going.',icon:'☕'},
@@ -36,8 +36,9 @@ const days=[
       {time:'13:00',title:'Lunch in the city centre',description:'Find a relaxed pub or restaurant around the centre. Keep the afternoon open rather than booking every hour.',icon:'🍽️',special:true},
       {time:'14:30',title:'Mathew Street & Cavern Quarter',description:'Return to the Cavern Quarter for the atmosphere and live music. The Cavern Pub lists Saturday live music from 15:00, with free entry; the Cavern Club also runs live music during the day.',icon:'🎸',special:true,link:{label:'Cavern Pub live music & opening info',url:'https://www.cavernclub.com/the-cavern-club-liverpool/cavern-pub-liverpool/'}},
       {time:'16:30',title:'Pogue Mahone',description:'Head to Seel Street for an Irish pub stop, Guinness and weekend live-music atmosphere. It is a handy base for the Ropewalks area before dinner.',icon:'☘️',special:true,link:{label:'Pogue Mahone official site',url:'https://apubcalledpogues.com/'}},
-      {time:'18:00',title:'Hotel reset or dinner',description:'Choose a city-centre dinner, or head back to the Titanic Hotel for a break before the evening. Check your return transport before setting off.',icon:'🛎️'},
-      {time:'20:00+',title:'Final pubs & live music',description:'Finish where the atmosphere suits you: the Cavern Quarter for live music or Seel Street for Irish-pub craic. No tour booking is needed for the pub stops; check venue entry prices if you want to go inside the Cavern Club.',icon:'🎶',special:true,speech:'Saturday in Liverpool: waterfront by day, then pubs and live music around Mathew Street and Seel Street.',link:{label:'The Cavern Club opening times',url:'https://www.cavernclub.com/opening-times-and-prices/'}}
+      {time:'18:00',title:'Traditional pub stop: Ye Hole in Ye Wall',description:'Head towards Hackins Hey for a small, characterful old-school pub. If it is busy, the nearby Denbigh Castle is a good back-up.',icon:'🍺',special:true,link:{label:'Ye Hole in Ye Wall',url:'https://www.google.com/maps/search/?api=1&query=Ye+Hole+in+Ye+Wall+Liverpool'}},
+      {time:'19:00',title:'The Lion Tavern',description:'A well-regarded traditional pub near Moorfields, especially good for well-kept cask ale and a historic interior. Check the time and route before heading north.',icon:'🍻',special:true,link:{label:'The Lion Tavern',url:'https://www.google.com/maps/search/?api=1&query=The+Lion+Tavern+Liverpool'}},
+      {time:'20:00+',title:'Final pint around Mathew Street',description:'Finish with the Cavern Pub and surrounding pubs for live music, then arrange your return to Titanic Hotel at Stanley Dock. Use a taxi if you are ready to call it a night.',icon:'🎶',special:true,speech:'Saturday: traditional Liverpool pubs, historic interiors, cask ale and live music.',link:{label:'Cavern Pub live music & opening info',url:'https://www.cavernclub.com/the-cavern-club-liverpool/cavern-pub-liverpool/'}}
     ]
   }
 ] satisfies DayTab[];
