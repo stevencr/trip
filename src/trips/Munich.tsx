@@ -1,6 +1,19 @@
 import {TripPage} from '../components/TripPage';
 import type {DayTab} from '../components/DayTabs';
 
+const munichRouteUrl='https://www.google.com/maps/dir/Marienplatz,+Munich/Viktualienmarkt,+Munich/Eisbachwelle,+Munich/Kilians+Irish+Pub,+Frauenplatz,+Munich/data=!4m2!4m1!3e2';
+const munichRouteEmbed='https://www.google.com/maps?output=embed&dirflg=w&saddr=Marienplatz,+Munich&daddr=Viktualienmarkt,+Munich+to:Eisbachwelle,+Munich+to:Kilians+Irish+Pub,+Frauenplatz,+Munich';
+
+function MunichRouteMap(){return <section aria-label="Munich sightseeing map" style={{margin:'1rem 0 1.25rem',padding:'1rem',border:'1px solid var(--border, #d8d8d8)',borderRadius:'16px',background:'var(--paper, #fff)'}}>
+  <div style={{display:'flex',justifyContent:'space-between',alignItems:'baseline',gap:'1rem',flexWrap:'wrap'}}>
+    <h2 style={{margin:0,fontSize:'1.1rem'}}>Munich · central sights walking map</h2>
+    <a href={munichRouteUrl} target="_blank" rel="noreferrer">Open walking directions ↗</a>
+  </div>
+  <p style={{margin:'0.4rem 0 0.9rem',fontSize:'.9rem',opacity:.8}}>A practical central route linking Marienplatz, Viktualienmarkt, the Eisbach wave in the English Garden, and Kilians Irish Pub near Frauenplatz.</p>
+  <iframe title="Interactive Munich walking map from Marienplatz via Viktualienmarkt and Eisbach wave to Kilians Irish Pub" src={munichRouteEmbed} loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen style={{display:'block',width:'100%',height:'min(65vh,520px)',minHeight:'340px',border:0,borderRadius:'12px',background:'#f4f1eb'}}/>
+  <p style={{margin:'0.7rem 0 0',fontSize:'.85rem'}}>This map covers the central Munich sights in the itinerary; it does not assume a hotel location or include the optional Alps/Neuschwanstein day trip. Check current walking access and opening times before setting off.</p>
+</section>}
+
 const days=[
 {id:'thu',label:'Thu 20',date:'Thursday · 20 May',title:'Arrival · first beers',intro:'Munich begins. Check in, get your bearings and get The Usual Suspects together.',tip:'🍺 Start easy — Munich is going to provide plenty of opportunities later.',items:[
 {time:'AFTERNOON',title:'Arrive & check in',description:'Drop the bags and head into the old town.',icon:'🧳'},
